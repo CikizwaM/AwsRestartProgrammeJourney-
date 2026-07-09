@@ -1,5 +1,5 @@
 # AwsRestartProgrammeJourney-
-  I'm Cikizwa.
+I am Cikizwa Maforevane
 This repository documents my learning journey through the AWS re/Start Program,
 a full-time, hands-on training initiative designed to build foundational skills
 in cloud computing and information technology.
@@ -17,4 +17,24 @@ in cloud computing and information technology.
  I am passionate about continuous learning and technology, and I aim to further
  develop my expertise in cloud computing, systems administration, and related IT
  fields as I pursue opportunities in the technology industry.
+
+---
     
+## [Certifications & Badges](<./Certifications & Badges/readme.md>)
+
+* AWS SimuLearn: Cloud Computing Essentials
+* AWS SimuLearn: Cloud Economics
+* AWS SimuLearn: Cloud First Steps
+* AWS SimuLearn: Highly Available Web Applications
+
+---
+
+## [Core Concepts](<./Core Concepts/readme.md>)
+
+This section covered essential AWS and IT foundations:
+
+* **EC2 & Compute:** Virtual machines and compute workloads
+* **Linux:** Command line, file systems, and system operations
+* **Networking:** Subnets, routing, DNS, and VPC concepts
+* **Machine Learning & GenAI:** Introductory concepts and applications
+* **WordPress Deployment:** Web hosting fundamentals on AWS
