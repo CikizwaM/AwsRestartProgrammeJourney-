@@ -26,7 +26,8 @@ in cloud computing and information technology.
 * AWS SimuLearn: Cloud Economics
 * AWS SimuLearn: Cloud First Steps
 * AWS SimuLearn: Highly Available Web Applications
-
+* AWS SimuLearn: Databases in Practice
+  
 ---
 
 ## [Core Concepts](<./Core Concepts/readme.md>)
