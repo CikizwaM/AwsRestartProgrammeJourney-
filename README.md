@@ -38,3 +38,31 @@ This section covered essential AWS and IT foundations:
 * **Networking:** Subnets, routing, DNS, and VPC concepts
 * **Machine Learning & GenAI:** Introductory concepts and applications
 * **WordPress Deployment:** Web hosting fundamentals on AWS
+
+---
+
+## [Core Concepts](<./Core Concepts/readme.md>)
+
+This section covered essential AWS and IT foundations:
+
+* **Linux:** Command line, file systems, and system operations
+* **EC2 & Compute:** Virtual machines and compute workloads
+
+
+
+
+---
+
+## [Labs](./Labs/readme.md)
+
+Hands-on labs formed the core of the learning experience.
+
+### [Linux & Systems](<./Labs/Linux & Systems/readme.md>)
+* Bash scripting and automation
+
+
+
+
+
+
+
