@@ -50,7 +50,40 @@ The AWS CLI command `aws iam create-user` creates a new IAM user for your AWS ac
  }
 }
 ```
+Then the AWS CLI command `aws iam create-login-profile` creates a login profile for the new user.
+```bash
+[ec2-user@ip-10-200-0-238 ~]$ aws iam create-login-profile --user-name awsS3user --password Training123!
+{
+"LoginProfile": {
+        "UserName": "awsS3user",
+        "CreateDate": "2026-07-12T16:53:35Z",
+        "PasswordResetRequired": false
+  }
+}
+```
+I login in with the new IAM user credentials:
+- Account ID: ID of the account VocLabsUser from the AWS Management Console
+- IAM user name: awsS3user
+- password: Training123!
 
+The IAM user didn't have access to the S3 bucket. Using the terminal I serach policy that grants full access to Amazon S3.
+```bash
+sh-4.2$ aws iam list-policies --query "Policies[?contains(PolicyName,'S3')]"
+[
+ {
+"PolicyName": "AmazonS3FullAccess",
+        "PermissionsBoundaryUsageCount": 0,
+        "CreateDate": "2015-02-06T18:40:58Z",
+        "AttachmentCount": 0,
+        "IsAttachable": true,
+        "PolicyId": "ANPAIFIR6V6BVTRAHWINE",
+        "DefaultVersionId": "v2",
+        "Path": "/",
+        "Arn": "arn:aws:iam::aws:policy/AmazonS3FullAccess",
+        "UpdateDate": "2021-09-27T20:16:37Z"
+  },
+...
+```
 
 
 
