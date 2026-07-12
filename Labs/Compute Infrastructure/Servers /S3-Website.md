@@ -32,7 +32,24 @@ Bucket must have a unique name, here I used `ciki182`.
 ```bash
 [ec2-user@ip-10-200-0-238 ~]$ aws s3api create-bucket --bucket ciki182 --region us-west-2 --create-bucket-configuration LocationConstraint=us-west-2
 {
+ "Location": "http://ciki182.s3.amazonaws.com/"
+}
+```
 
+## Task 4: Create a new IAM user that has full access to Amazon S3
+The AWS CLI command `aws iam create-user` creates a new IAM user for your AWS account. The option `--user-name` is used to create the name of the user and must be unique within the account.
+```bash
+[ec2-user@ip-10-200-0-238 ~]$ aws iam create-user --user-name awsS3user
+{
+   "User": {
+"UserName": "awsS3user",
+        "Path": "/",
+        "CreateDate": "2026-07-12T16:52:10Z",
+        "UserId": "AIDAWFDSMH5DJCRZ2M4FO",
+        "Arn": "arn:aws:iam::423294156614:user/awsS3user"
+ }
+}
+```
 
 
 
