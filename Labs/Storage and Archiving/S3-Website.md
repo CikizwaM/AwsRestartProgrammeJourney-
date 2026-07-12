@@ -8,6 +8,23 @@ In this lab I used the AWS Command Line Interface (AWS CLI) commands from an Ama
 
 ![S3 Website Architecture](./images/s3-website-overview.png)
 
+## Task 1: Connect to an Amazon Linux EC2 instance using SSM
+From the lab, I opened the **InstanceSessionUrl** and typed:
+```bash
+sh-4.2$ sudo su -l ec2-user
+[ec2-user@ip-10-200-0-238 ~]$ pwd
+/home/ec2-user
+```
+
+## Task 2: Configure the AWS CLI
+Amazon Linux has already **AWS CLI** pre-installed. I run the command `aws configure` to update the AWS CLI software with credentials.
+```bash
+[ec2-user@ip-10-200-0-238 ~]$ aws configure
+AWS Access Key ID [None]: <from lab details>
+AWS Secret Access Key [None]: <from lab details>
+Default region name [None]: us-west-2
+Default output format [None]: json
+
 
 
 
