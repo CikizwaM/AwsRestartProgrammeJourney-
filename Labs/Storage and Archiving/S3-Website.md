@@ -6,7 +6,7 @@ In this lab I used the AWS Command Line Interface (AWS CLI) commands from an Ama
 - Upload files to Amazon S3 to host a simple website for the Café & Bakery.
 - Create a batch file that can be used to update the static website when you change any of the website files locally.
 
-![S3 Website Architecture](./images/s3-website-overview.png)
+![S3 Website Architecture](./Images/s3-website-overview.png)
 
 ## Task 1: Connect to an Amazon Linux EC2 instance using SSM
 From the lab, I opened the **InstanceSessionUrl** and typed:
