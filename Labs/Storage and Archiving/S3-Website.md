@@ -144,7 +144,61 @@ upload: images/Strawberry-&-Blueberry-Tarts.png to s3://ctardi256/images/Strawbe
                            PRE images/
 2026-07-12 19:48:53       2980 index.html
 ```
+![S3 Static Wesite Console](./Images/s3.PNG)
 
+4. On AWS Management Console I checked that the Static website hosting is Enabled.
+
+![S3 Static Wesite Enabled](./Images/static-website.PNG)
+
+6. And here it is the bucket website endpoint URL in the browser!
+
+![S3 Wesite](./Images/url.PNG)
+
+## Task 8: Create a batch file to make updating the website repeatable
+1. To create a repeatable deployment, I created a batch file called `update-website.sh` in the home directory.
+```bash
+#!/bin/bash
+aws s3 cp /home/ec2-user/sysops-activity-files/static-website/ s3://ciki182/ --recursive --acl public-read
+```
+And made the file executable `chmod +x update-website.sh`.
+
+2. Then I made some changes to the `sysops-activity-files/static-website/index.html` file:
+- bgcolor="aquamarine" to bgcolor="gainsboro"
+- bgcolor="orange" to bgcolor="cornsilk"
+- bgcolor="aquamarine" to bgcolor="gainsboro"
+
+3. Eventually, I run your batch file to update the website.
+```bash
+[ec2-user@ip-10-200-0-238 ~]$ ./update-website.sh
+upload: sysops-activity-files/static-website/css/styles.css to s3://ciki182/css/styles.css
+upload: sysops-activity-files/static-website/images/Coffee-Shop.png to s3://ciki182/images/Coffee-Shop.png
+upload: sysops-activity-files/static-website/images/Cafe-Owners.png to s3://ciki182/images/Cafe-Owners.png
+upload: sysops-activity-files/static-website/images/Cookies.png to s3://ciki182/images/Cookies.png
+upload: sysops-activity-files/static-website/index.html to s3://ciki182/index.html
+upload: sysops-activity-files/static-website/images/Coffee-and-Pastries.png to s3://ciki182/images/Coffee-and-Pastries.png
+upload: sysops-activity-files/static-website/images/Strawberry-&-Blueberry-Tarts.png to s3://ciki182/images/Strawberry-&-Blueberry-Tarts.png
+upload: sysops-activity-files/static-website/images/Cake-Vitrine.png to s3://ciki182/images/Cake-Vitrine.png
+upload: sysops-activity-files/static-website/images/Strawberry-Tarts.png to s3://ciki182/images/Strawberry-Tarts.png
+upload: sysops-activity-files/static-website/images/Cup-of-Hot-Chocolate.png to s3://ciki182/images/Cup-of-Hot-Chocolate.png
+```
+
+4. And here it is the uodated website!
+
+5. ![Updated S3 Wesite](./Images/website.PNG)
+
+## Optional challenge
+Using the `aws s3 sync` command to only copy the files that have been modified to the `S3 bucket` increases efficiency.
+Only modified files were copied.
+```bash
+[ec2-user@ip-10-200-0-238 ~]$ aws s3 sync /home/ec2-user/sysops-activity-files/static-website/ s3://ciki182/ --acl public-read
+upload: sysops-activity-files/static-website/index.html to s3://ciki182/index.html
+```
+
+# Conclusion
+With this lab I learnt how to:
+- Run AWS CLI commands that use IAM and Amazon S3 services.
+- Deploy a static website to an S3 bucket.
+- Create a script that uses the AWS CLI to copy files in a local directory to Amazon S3.
 
 
   
