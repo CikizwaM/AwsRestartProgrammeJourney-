@@ -6,7 +6,7 @@ These labs demonstrate practical cloud engineering skills across infrastructure,
 
 ---
 
-## Purpose of This Section
+## 🎯 Purpose of This Section
 
 This section of the portfolio was designed to demonstrate:
 
@@ -19,7 +19,7 @@ This section of the portfolio was designed to demonstrate:
 
 ---
 
-## Lab Domains Overview
+## 🌐 Lab Domains Overview
 
 The labs are grouped into the following engineering domains:
 
@@ -29,7 +29,7 @@ The labs are grouped into the following engineering domains:
 
 ---
 
-## Skills Demonstrated
+## 🛠️ Skills Demonstrated
 
 - Cloud infrastructure deployment and troubleshooting
 - Network design and debugging (VPC, subnets, routing)
@@ -42,7 +42,7 @@ The labs are grouped into the following engineering domains:
 
 ---
 
-## Lab Structure
+## 📁 Lab Structure
 
 Each folder represents a specific domain of cloud engineering practice.  
 Inside each folder you will find:
@@ -54,6 +54,6 @@ Inside each folder you will find:
 
 ---
 
-## Key Outcome
+## ✅ Key Outcome
 
 This section demonstrates progression from foundational cloud concepts to practical cloud engineering capabilities, simulating real-world IT and DevOps workflows.
