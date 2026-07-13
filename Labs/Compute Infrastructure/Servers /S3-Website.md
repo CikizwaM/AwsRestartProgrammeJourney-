@@ -194,7 +194,7 @@ Only modified files were copied.
 upload: sysops-activity-files/static-website/index.html to s3://ciki182/index.html
 ```
 
-# Conclusion
+# ✅ Conclusion
 With this lab I learnt how to:
 - Run AWS CLI commands that use IAM and Amazon S3 services.
 - Deploy a static website to an S3 bucket.
