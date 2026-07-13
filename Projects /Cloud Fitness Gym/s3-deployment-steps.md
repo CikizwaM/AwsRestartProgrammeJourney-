@@ -1,14 +1,14 @@
-# S3 Static Website Hosting — Deployment Steps
+# ☁️ S3 Static Website Hosting — Deployment Steps
 
-## Overview
+## 🎯 Overview
 
 The Cloud Fitness Gym website was hosted on Amazon S3 using S3's built-in static website hosting feature. No EC2, no server, no database, simply just files served directly from a storage bucket.
 
-## Bucket setup
+## 🪣 Bucket setup
 
 ![S3 bucket created](./Images/S3/1.%20S3%20Bucket%20Created.png)
 
-## Steps Taken
+## 📝 Steps Taken
 
 ### 1. index.html set as the index document
 
