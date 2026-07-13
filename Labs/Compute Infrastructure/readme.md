@@ -11,6 +11,6 @@ This folder contains all the compute infrastucture labs.
 
 ---
 
-## 🚀 Skills Developed
+## 🛠️ Skills Developed
 
 
