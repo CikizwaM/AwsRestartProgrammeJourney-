@@ -11,7 +11,7 @@
 </p>
 
 <strong>This is the link to the live demonstration of the website:</strong>
-**Live:** http://cloudfitnessgym.s3-website.af-south-1.amazonaws.com
+**Live:** [http://cloudfitnessgym.s3-website.af-south-1.amazonaws.com](https://cloudfitnessgym.s3.af-south-1.amazonaws.com/cloud-fitness-gym/index.html)
 
 ---
 
