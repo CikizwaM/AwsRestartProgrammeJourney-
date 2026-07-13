@@ -53,9 +53,6 @@ This section covered essential AWS and IT foundations:
 * **Linux:** Command line, file systems, and system operations
 * **EC2 & Compute:** Virtual machines and compute workloads
 
-
-
-
 ---
 
 ## [Labs](./Labs/readme.md)
@@ -64,7 +61,6 @@ Hands-on labs formed the core of the learning experience.
 
 ### [Linux & Systems](<./Labs/Linux & Systems/readme.md>)
 * Bash scripting and automation
-
 
 ---
 
