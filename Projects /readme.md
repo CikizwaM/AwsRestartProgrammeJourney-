@@ -3,7 +3,7 @@
 This directory contains all the completed projects.
 
 ---
-## Projects Overview
+## 🎯 Projects Overview
 
 This section contains the following projects:
 
