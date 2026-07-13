@@ -58,7 +58,7 @@ Hands-on labs formed the core of the learning experience.
 
 ## 📁 [Projects](./Projects%20/readme.md)
 
-### [S3 Static Website](<./Projects%20/Cloud%20Fitness%20Gym/readme.md>)
+### 🌐 [Cloud Fitness Gym - AWS Static Website](<./Projects%20/Cloud%20Fitness%20Gym/readme.md>)
 
 A fully deployed static website hosted on AWS S3, demonstrating real-world cloud hosting practices.
 
