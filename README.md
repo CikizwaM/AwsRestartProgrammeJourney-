@@ -1,4 +1,4 @@
-# AwsRestartProgrammeJourney-
+# ☁️ AwsRestartProgrammeJourney-
 ![AWS](https://img.shields.io/badge/AWS-Cloud-orange?style=for-the-badge&logo=amazonaws&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-System%20Administration-black?style=for-the-badge&logo=linux)
 ![Python](https://img.shields.io/badge/Python-Automation-blue?style=for-the-badge&logo=python)
@@ -24,7 +24,7 @@ in cloud computing and information technology.
 
 ---
     
-## [Certifications & Badges](<./Certificates%20%26%20Badges%20/readme.md>)
+## 🏆 [Certifications & Badges](<./Certificates%20%26%20Badges%20/readme.md>)
 
 * AWS SimuLearn: Cloud Computing Essentials
 * AWS SimuLearn: Cloud Economics
@@ -34,7 +34,7 @@ in cloud computing and information technology.
   
 ---
 
-## [Core Concepts](<./Core Concepts/readme.md>)
+## 📖 [Core Concepts](<./Core Concepts/readme.md>)
 
 This section covered essential AWS and IT foundations:
 
@@ -43,7 +43,7 @@ This section covered essential AWS and IT foundations:
 
 ---
 
-## [Labs](./Labs/readme.md)
+## 🚀 [Labs](./Labs/readme.md)
 
 Hands-on labs formed the core of the learning experience.
 
@@ -56,7 +56,7 @@ Hands-on labs formed the core of the learning experience.
 
 ---
 
-## [Projects](./Projects%20/readme.md)
+## 💻 [Projects](./Projects%20/readme.md)
 
 ### [S3 Static Website](<./Projects%20/Cloud%20Fitness%20Gym/readme.md>)
 
