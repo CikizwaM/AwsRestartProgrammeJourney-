@@ -47,11 +47,11 @@ This section covered essential AWS and IT foundations:
 
 Hands-on labs formed the core of the learning experience.
 
-### [Compute Infrastructure](<./Labs/Compute%20Infrastructure/readme.md>) 
+### 🖥️ [Compute Infrastructure](<./Labs/Compute%20Infrastructure/readme.md>) 
 * EC2 instance deployment and architecture analysis
 * Static website hosting (S3)
 
-### [Linux & Systems](<./Labs/Linux%20%26%20Systems/readme.md>) 
+### 🐧 [Linux & Systems](<./Labs/Linux%20%26%20Systems/readme.md>) 
 * Bash scripting and automation
 
 ---
