@@ -1,4 +1,4 @@
-<h1 align="center">🖼️ Cloud Fitness Gym - AWS Static Website</h1>
+<h1 align="center">🌐 Cloud Fitness Gym - AWS Static Website</h1>
 
 <p align="center">
   <strong>A cloud‑hosted, fast, and scalable static website for a Cloud Fitness Gym company</strong>
