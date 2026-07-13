@@ -1,4 +1,4 @@
-# Projects
+# 📁 Projects
 
 This directory contains all the completed projects.
 
