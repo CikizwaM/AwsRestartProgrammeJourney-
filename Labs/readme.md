@@ -24,7 +24,7 @@ This section of the portfolio was designed to demonstrate:
 The labs are grouped into the following engineering domains:
 
 - [Compute Infrastructure (EC2, servers)](<./Compute Infrastructure/readme.md>)
-- [Linux & System Administration](<./Linux & System/readme.md>)
+- [Linux & System Administration](<./Labs/Linux%20%26%20Systems/readme.md>)
 - [Serverless & Containers Computing (Lambda, event-driven systems)](<./Serverless & Containers/readme.md>)
 
 ---
