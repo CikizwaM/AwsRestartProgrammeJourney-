@@ -7,7 +7,7 @@ This directory contains all the completed projects.
 
 This section contains the following projects:
 
-- [Cloud Fitness Gym](<./Compute Infrastructure/readme.md>)
+- [Cloud Fitness Gym](<./Cloud%20Fitness%20Gym/readme.md>)
 
 ---
 
