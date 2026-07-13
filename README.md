@@ -66,6 +66,19 @@ Hands-on labs formed the core of the learning experience.
 * Bash scripting and automation
 
 
+---
+
+
+## Projects
+
+### [S3 Static Website](<./Projects/S3-website/readme.md>)
+
+A fully deployed static website hosted on AWS S3, demonstrating real-world cloud hosting practices.
+
+---
+
+
+
 
 
 
