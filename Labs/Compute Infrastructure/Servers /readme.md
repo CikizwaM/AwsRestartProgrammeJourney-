@@ -1,4 +1,4 @@
-# Servers – Application Hosting
+# 🖥️ Servers – Application Hosting
 
 This folder contains server and hosting labs.
 
