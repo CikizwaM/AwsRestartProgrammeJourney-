@@ -1,4 +1,4 @@
-# S3 Static Hosting — Cost Analysis
+# 💰 S3 Static Hosting — Cost Analysis
 
 S3 static hosting is pay-as-you-go with no fixed monthly fee. Cost is driven by three things:
 
@@ -12,7 +12,7 @@ Of the three, data transfer out is almost always the dominant cost for a live si
 
 ![Billing and Cost Management dashboard](./Images/S3/5.%20Billing%20and%20Cost%20Management%20Dashboard.png)
 
-## Cost scaling with traffic
+## 📈 Cost scaling with traffic
 
 A page load pulls down the HTML, CSS, JS, and images — roughly 15MB total for this site as currently built.
 
@@ -27,6 +27,6 @@ Cost rises roughly linearly with traffic. A sudden traffic spike (e.g. a promoti
 
 Image compression can decrease the transfer bill by 10x or more for the same traffic so the single biggest lever for controlling costs on an image-heavy site like a gym.
 
-## Bottom line for an actual deployment
+## 💡 Bottom line for an actual deployment
 
 For a small local gym's marketing site with modest traffic (roughly a few thousand visitors per month) and optimized images, the realistic cost is under R100/month on S3 alone. Traffic combined with image weight is the number that moves the most so a business expecting growth or planning promotions should budget for data transfer scaling accordingly.
