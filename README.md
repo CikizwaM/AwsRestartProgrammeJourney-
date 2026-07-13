@@ -64,7 +64,7 @@ A fully deployed static website hosted on AWS S3, demonstrating real-world cloud
 
 ---
 
-## Key Skills Developed
+## 🛠️ Key Skills Developed
 
 * Cloud infrastructure management
 * AWS service integration
@@ -77,6 +77,6 @@ A fully deployed static website hosted on AWS S3, demonstrating real-world cloud
 
 ---
 
-## Summary
+## 📝 Summary
 
 This repository represented a complete learning journey through cloud computing fundamentals and practical AWS workloads. It documented consistent hands-on experience across infrastructure, security, automation, and application deployment.
