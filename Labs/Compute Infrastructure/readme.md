@@ -13,4 +13,7 @@ This folder contains all the compute infrastucture labs.
 
 ## 🛠️ Skills Developed
 
+- Application deployment
+- Server configuration
+- Cloud hosting fundamentals
 
