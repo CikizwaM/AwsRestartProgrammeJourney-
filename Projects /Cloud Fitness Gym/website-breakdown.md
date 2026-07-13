@@ -1,39 +1,53 @@
 # 🏗️ Website Breakdown
 
-Static site built for Cloud Fitness Gym, deployed to Amazon S3.
+<strong>Static site built for Cloud Fitness Gym, deployed to Amazon S3.</strong>
 
 ## 📄 Pages
 
-🏠 Home
+🏠 <strong>Home</strong>
 <img src="./Images/Website/1.%20Home%20page.png" width="1760">
-Home, "why choose us" features and featured classes preview.
+<strong>Home, "why choose us" features and featured classes preview.</strong>
 
-💳 Plans
+---
+
+💳 <strong>Plans</strong>
 <img src="./Images/Website/2.%20Plans.png" width="1792">
-<img src=./Images/Website/3.%20Plans%20continued.png" width="1747">
-Pricing tiers (Student / Professional / Premium), day pass, corporate & senior rates.
+<img src="./Images/Website/3.%20Plans%20continued.png" width="1747">
+<strong>Pricing tiers (Student / Professional / Premium), day pass, corporate & senior rates.</strong>
 
-🏋️ Classes
+---
+
+🏋️ <strong>Classes</strong>
 <img src="./Images/Website/4.%20Classes.png" width="1716">
-Class descriptions + filterable weekly schedule table (by day)
+<strong>Class descriptions + filterable weekly schedule table (by day)</strong>
 
-📅 Booking
+---
+
+📅 <strong>Booking</strong>
 <img src="./Images/Website/5.%20Booking.png" width="1690">
-Class booking form which submits to confirmation.html
+<strong>Class booking form which submits to confirmation.html</strong>
 
-📞 Contact
+---
+
+📞 <strong>Contact</strong>
 <img src="./Images/Website/6.%20Contact%20Us.png" width="1697">
-Membership sign-up form, gym contact details and map which submits to confirmation.html
+<strong>Membership sign-up form, gym contact details and map which submits to confirmation.html</strong>
 
-✅ Confirmation
+---
+
+✅ <strong>Confirmation</strong>
 <img src="./Images/Website/7.%20Booking%20confirmation.png" width="1655">
-Reads submitted form data from the URL and displays a booking/sign-up summary with a generated reference number
+<strong>Reads submitted form data from the URL and displays a booking/sign-up summary with a generated reference number</strong>
 
-❌ Error
+---
+
+❌ <strong>Error</strong>
 <img src="./Images/Website/8.%20Error.png" width="1693">
-Custom 404, set as the S3 error document
+<strong>Custom 404, set as the S3 error document</strong>
 
-## 🧩 Shared components
+---
+
+## 🧩 Shared Components
 - `styles.css` — single stylesheet covering layout, navbar, cards, forms, pricing grid, schedule table, and responsive breakpoints
 - `main.js` — handles:
   - mobile nav toggle (hamburger menu)
@@ -42,6 +56,6 @@ Custom 404, set as the S3 error document
   - class schedule day-filter tabs
   - confirmation page: reads query parameters from the booking/sign-up form submission and renders the details and reference number for the client's side.
 
-## 📚 Design notes
+## 📚 Design Notes
 - No backend — booking and sign-up "submissions" are simulated via GET form parameters.
 - Fully static, so it maps directly onto S3 static website hosting with no server required.
