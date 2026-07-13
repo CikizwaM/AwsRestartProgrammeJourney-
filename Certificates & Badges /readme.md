@@ -1,6 +1,6 @@
 # 🏆 My AWS Certifications & Badges
 
-## My AWS SimuLearn Certifications
+## ✅ My AWS SimuLearn Certifications
 
 | AWS SimuLearn: Cloud First Steps | AWS SimuLearn: Cloud Economics | AWS SimuLearn: Cloud Computing Essentials |
 |---------|---------|---------|
