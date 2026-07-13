@@ -24,5 +24,5 @@
 ---
 
 ## 📁 Find below the screenshots for Setup/Billing and Website:
-**Live:** S3 Setup/Billing Screenshots: `Projects/S3 Static Website/S3 Screenshots/`. 
-**Live:** Website Screenshots: `Projects/S3 Static Website/Website Screenshots/`.
+- [S3 Setup/Billing Screenshots](<./Certificates%20%26%20Badges%20/readme.md>)
+- [Website Screenshots](<./Certificates%20%26%20Badges%20/readme.md>)
