@@ -1,4 +1,4 @@
-# Managing Log Files
+# 📜 Managing Log Files
 
 In this lab, I reviewed the **lastlog** and **secure log** outputs of the Linux machine.
 
@@ -90,7 +90,7 @@ psantos                                    **Never logged in**
 smartinez                                  **Never logged in**
 ssarkar                                    **Never logged in**
 ```
-## Conclusion
+## ✅ Conclusion
 What information can you extract for some of your business purposes?
 
 Except the ec2-user, no other user managed to login to the EC2 istance.
