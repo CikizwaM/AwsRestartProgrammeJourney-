@@ -2,28 +2,15 @@
 
 ## My AWS SimuLearn Certifications
 
-<p>
-  <a href="#">
-    <img src="./Images/aws-simulearn-cloud-first-steps.PNG"
-         alt="AWS SimuLearn Cloud: First Steps"
-         width="30%">
-  </a>
-  <a href="#">
-   <img src="./Images/aws-simulearn-cloud-economics.PNG"
-         alt="AWS SimuLearn: Cloud Economics"
-         width="30%">
-  </a>
-  <a href="#">
-     <img src="./Images/aws-simulearn-cloud-computing-essentials.PNG"
-         alt="AWS SimuLearn Cloud: Computing Essentials"
-         width="30%">
-  </a>
-  <a href="#">
-     <img src="./Images/aws-simulearn-cloud-computing-essentials.PNG"
-         alt="AWS SimuLearn Cloud: Computing Essentials"
-         width="30%">
-  </a>
-</p>
+| AWS SimuLearn Cloud: First Steps | AWS SimuLearn: Cloud Economics | AWS SimuLearn Cloud: Computing Essentials |
+|---------|---------|---------|
+| ![](./Images/aws-simulearn-cloud-first-steps.PNG) | ![](./Images/aws-simulearn-cloud-economics.PNG) | ![](./Images/aws-simulearn-cloud-computing-essentials.PNG) |
+
+| Image 4 | Image 5 | Image 6 |
+|---------|---------|---------|
+| ![](./Images/aws-simulearn-cloud-computing-essentials.PNG) | ![](./Images/aws-simulearn-cloud-first-steps.PNG) | ![](./Images/aws-simulearn-cloud-first-steps.PNG) |
+
+
 
 
 
