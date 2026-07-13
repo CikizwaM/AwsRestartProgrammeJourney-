@@ -68,8 +68,7 @@ Hands-on labs formed the core of the learning experience.
 
 ---
 
-
-## Projects
+## [Projects](./Projects%20/readme.md)
 
 ### [S3 Static Website](<./Projects%20/Cloud%20Fitness%20Gym/readme.md>)
 
