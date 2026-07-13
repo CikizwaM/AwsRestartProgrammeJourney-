@@ -62,7 +62,7 @@ Hands-on labs formed the core of the learning experience.
 
 A fully deployed static website hosted on AWS S3, demonstrating real-world cloud hosting practices.
 
----
+
 
 
 
