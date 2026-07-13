@@ -24,5 +24,5 @@
 ---
 
 ## 📁 Find below the screenshots for Setup/Billing and Website:
-- [S3 Setup/Billing Screenshots](<./S3/readme.md>)
-- [Website Screenshots](<./Website/readme.md>)
+- [S3 Setup/Billing Screenshots](<./Images/S3/readme.md>)
+- [Website Screenshots](<./Images/Website/readme.md>)
