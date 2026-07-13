@@ -23,17 +23,9 @@ This section of the portfolio was designed to demonstrate:
 
 The labs are grouped into the following engineering domains:
 
-- [Cloud Architecture & Scaling (CloudFormation, ELB, Auto Scaling)](<./Cloud Architecture & Scaling/readme.md>)
 - [Compute Infrastructure (EC2, servers)](<./Compute Infrastructure/readme.md>)
-- [Databases & Data Services (SQL and NoSQL systems)](<./Databases & Data Services/readme.md>)
-- [DevOps & Automations (Python)](<./DevOps & Automations/readme.md>)
 - [Linux & System Administration](<./Linux & System/readme.md>)
-- [Machine Learning & Generative AI Foundations](<./Machine Learning & Generative AI/readme.md>)
-- [Monitoring & Operations (CloudTrail, CloudWatch, CLI)](<./Monitoring/readme.md>)
-- [Networking (VPC, Subnets, IPs)](<./Networking/readme.md>)
-- [Security (IAM, encryption, hardening)](<./Security/readme.md>)
 - [Serverless & Containers Computing (Lambda, event-driven systems)](<./Serverless & Containers/readme.md>)
-- [Storage & Archiving (S3, EBS)](<./Storage & Archiving/readme.md>)
 
 ---
 
