@@ -2,41 +2,11 @@
 
 ## Screenshots
 
-<p>
-  <a href="#">
-    <img src="./1. S3 Bucket Created.png"
-         alt="S3 Bucket Created"
-         width="30%">
-  </a>
-  <a href="#">
-   <img src="./2. Enable Static Hosting.png"
-         alt="Enable Static Hosting"
-         width="30%">
-  </a>
-  <a href="#">
-     <img src="./3. Unblock Public Access.png"
-         alt="Unblock Public Access"
-         width="30%">
-  </a>
-  <a href="#">
-     <img src="./4. Added Bucket Policy for all users.png"
-         alt="Added Bucket Policy for all users"
-         width="30%">
-  </a>
-  <a href="#">
-     <img src="./5. Billing and Cost Management Dashboard.png"
-         alt="Billing and Cost Management Dashboard"
-         width="30%">
-  </a>
-</p>
+| S3 Bucket Created                                           | Enable Static Hosting                                               | Unblock Public Access                                               |
+| ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| [![S3 Bucket Created](./1.%20S3%20Bucket%20Created.png)](#) | [![Enable Static Hosting](./2.%20Enable%20Static%20Hosting.png)](#) | [![Unblock Public Access](./3.%20Unblock%20Public%20Access.png)](#) |
 
-
-
-
-
-
-
-
-
-
+| Added Bucket Policy for all users                                                                 | Billing and Cost Management Dashboard                                                                   |   |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | - |
+| [![Added Bucket Policy for all users](./4.%20Added%20Bucket%20Policy%20for%20all%20users.png)](#) | [![Billing and Cost Management Dashboard](./5.%20Billing%20and%20Cost%20Management%20Dashboard.png)](#) |   |
 
