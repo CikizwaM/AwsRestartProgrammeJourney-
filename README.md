@@ -64,7 +64,7 @@ A fully deployed static website hosted on AWS S3, demonstrating real-world cloud
 
 ---
 
-## 🛠️ Key Skills Developed
+## 🚀 Key Skills Developed
 
 * Cloud infrastructure management
 * AWS service integration
