@@ -24,7 +24,7 @@ in cloud computing and information technology.
 
 ---
     
-## [Certifications & Badges](<./Certificates%20%26%20Badges/readme.md>)
+## [Certificates & Badges](<./Certificates & Badges/readme.md>)
 
 * AWS SimuLearn: Cloud Computing Essentials
 * AWS SimuLearn: Cloud Economics
