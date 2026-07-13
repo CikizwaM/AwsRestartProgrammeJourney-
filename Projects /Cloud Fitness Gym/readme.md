@@ -24,5 +24,5 @@
 ---
 
 ## 📁 Find below the screenshots for Setup/Billing and Website:
-- [S3 Setup/Billing Screenshots](<./Certificates%20%26%20Badges%20/readme.md>)
-- [Website Screenshots](<./Certificates%20%26%20Badges%20/readme.md>)
+- [S3 Setup/Billing Screenshots](<./Website/readme.md>)
+- [Website Screenshots](<./Website/readme.md>)
