@@ -19,7 +19,7 @@
 - [Company Overview](./company-overview.md)
 - [Website Breakdown](./website-breakdown.md)
 - [S3 Deployment Steps](./s3-deployment-steps.md)
-- [Cost Analysis](.cost-analysis.md)
+- [Cost Analysis](./cost-analysis.md)
 
 ---
 
