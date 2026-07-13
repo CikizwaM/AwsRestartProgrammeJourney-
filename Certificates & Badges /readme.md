@@ -1,4 +1,4 @@
-# My AWS Certifications & Badges
+# 🏆 My AWS Certifications & Badges
 
 ## My AWS SimuLearn Certifications
 
