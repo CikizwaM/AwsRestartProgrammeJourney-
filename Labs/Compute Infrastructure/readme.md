@@ -8,6 +8,7 @@ This folder contains all the compute infrastucture labs.
 
 - EC2
 - Servers
+- Servers%20/readme.md
 
 ---
 
