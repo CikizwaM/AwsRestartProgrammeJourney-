@@ -4,7 +4,7 @@
 ![Python](https://img.shields.io/badge/Python-Automation-blue?style=for-the-badge&logo=python)
 
 I am Cikizwa Maforevane
-This repository documents my learning journey through the AWS re/Start Program,
+and this repository documents my learning journey through the AWS re/Start Program,
 a full-time, hands-on training initiative designed to build foundational skills
 in cloud computing and information technology.
 
