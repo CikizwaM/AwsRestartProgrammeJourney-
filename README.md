@@ -63,7 +63,7 @@ Hands-on labs formed the core of the learning experience.
 * EC2 instance deployment and architecture analysis
 * Static website hosting (S3)
 
-### [Linux & Systems](<./Labs/Linux & Systems/readme.md>) 
+### [Linux & Systems](<./Labs/Linux%20%26%20Systems/readme.md>) 
 * Bash scripting and automation
 
 ---
