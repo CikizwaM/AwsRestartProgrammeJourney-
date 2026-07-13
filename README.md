@@ -62,12 +62,21 @@ Hands-on labs formed the core of the learning experience.
 
 A fully deployed static website hosted on AWS S3, demonstrating real-world cloud hosting practices.
 
+---
 
+## Key Skills Developed
 
+* Cloud infrastructure management
+* AWS service integration
+* Linux system administration
+* Networking design and troubleshooting
+* Database design and querying
+* Python scripting and automation
+* Security best practices
+* Technical documentation and GitHub workflows
 
+---
 
+## Summary
 
-
-
-
-
+This repository represented a complete learning journey through cloud computing fundamentals and practical AWS workloads. It documented consistent hands-on experience across infrastructure, security, automation, and application deployment.
