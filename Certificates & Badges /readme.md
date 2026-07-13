@@ -2,7 +2,7 @@
 
 ## My AWS SimuLearn Certifications
 
-<p align="center">
+<p>
   <img src="./Images/aws-simulearn-cloud-first-steps.PNG"
          alt="AWS SimuLearn Cloud: First Steps"
          width="30%">
