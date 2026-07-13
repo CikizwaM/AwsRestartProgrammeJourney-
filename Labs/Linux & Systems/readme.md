@@ -7,10 +7,7 @@ This folder contains Linux-based system labs.
 ## What This Covers
 
 - Bash scripting
-- Cron jobs
 - Log analysis
-- Package management
-- Backup strategies
 
 ---
 
