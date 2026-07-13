@@ -43,7 +43,7 @@ This section covered essential AWS and IT foundations:
 
 ---
 
-## 🚀 [Labs](./Labs/readme.md)
+## 📁 [Labs](./Labs/readme.md)
 
 Hands-on labs formed the core of the learning experience.
 
