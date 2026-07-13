@@ -186,7 +186,7 @@ upload: sysops-activity-files/static-website/images/Cup-of-Hot-Chocolate.png to 
 
 5. ![Updated S3 Wesite](./Images/website.PNG)
 
-## Optional challenge
+## ⚠️ Optional challenge
 Using the `aws s3 sync` command to only copy the files that have been modified to the `S3 bucket` increases efficiency.
 Only modified files were copied.
 ```bash
