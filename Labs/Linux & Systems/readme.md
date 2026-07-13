@@ -4,14 +4,14 @@ This folder contains Linux-based system labs.
 
 ---
 
-## 📚 What This Covers
+## 🎯 What This Covers
 
 - Bash scripting
 - Log analysis
 
 ---
 
-## 🚀 Skills Developed
+## 🛠️ Skills Developed
 
 - Linux system administration
 - Automation with shell scripting
