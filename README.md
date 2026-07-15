@@ -26,11 +26,11 @@ in cloud computing and information technology.
     
 ## 🏆 [Certifications & Badges](<./Certificates%20%26%20Badges%20/readme.md>)
 
-* AWS SimuLearn: Cloud Computing Essentials
-* AWS SimuLearn: Cloud Economics
 * AWS SimuLearn: Cloud First Steps
-* AWS SimuLearn: Highly Available Web Applications
+* AWS SimuLearn: Cloud Economics
+* AWS SimuLearn: Cloud Computing Essentials
 * AWS SimuLearn: Databases in Practice
+* AWS SimuLearn: Highly Available Web Applications
   
 ---
 
