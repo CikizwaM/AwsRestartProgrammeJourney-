@@ -75,7 +75,7 @@ The authenticity of host '54.186.52.211 (54.186.52.211)' can't be established.
 ED25519 key fingerprint is SHA256:1BKWqHIwEGfpe44lKY6FFopUxt2vqYAQjYHcS3vvosQ.
 This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-Warning: Permanently added '35.87.129.222' (ED25519) to the list of known hosts.
+Warning: Permanently added '54.186.52.211' (ED25519) to the list of known hosts.
    ,     #_
    ~\_  ####_        Amazon Linux 2
   ~~  \_#####\
