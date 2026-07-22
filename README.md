@@ -31,6 +31,7 @@ in cloud computing and information technology.
 * AWS SimuLearn: Cloud Computing Essentials
 * AWS SimuLearn: Databases in Practice
 * AWS SimuLearn: Highly Available Web Applications
+* AWS SimuLearn: Network Concepts
   
 ---
 
