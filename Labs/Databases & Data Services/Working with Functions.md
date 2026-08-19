@@ -113,8 +113,8 @@ SELECT Name,
 
 ## Conclusion
 
-  I used aggregate functions SUM(), MIN(), MAX(), and AVG() to summarize data
-  I used the SUBSTRING_INDEX() function to split strings
-  I used the LENGTH() and TRIM() functions to determine the length of a string
-  I used the DISTINCT() function to filter duplicate records
-  I used functions in the SELECT statement and WHERE clause
+-  I used aggregate functions SUM(), MIN(), MAX(), and AVG() to summarize data
+-  I used the SUBSTRING_INDEX() function to split strings
+-  I used the LENGTH() and TRIM() functions to determine the length of a string
+-  I used the DISTINCT() function to filter duplicate records
+-  I used functions in the SELECT statement and WHERE clause
