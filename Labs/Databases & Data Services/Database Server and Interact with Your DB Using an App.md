@@ -288,3 +288,9 @@ The DB Security Group allows MySQL traffic on port `3306` from the Web Security 
 Never upload the actual database password, AWS credentials, or other secrets to GitHub.
 
 ## Screenshot
+
+
+## Conclusions
+- I launch an Amazon RDS DB instance with high availability.
+- I configure the DB instance to permit connections from my web server.
+- I open a web application and interact with my database.
