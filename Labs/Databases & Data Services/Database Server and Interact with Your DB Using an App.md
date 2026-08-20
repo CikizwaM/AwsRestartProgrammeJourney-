@@ -194,6 +194,7 @@ Use a placeholder in the GitHub repository:
 
 ## Task 4: Interact with Your Database
 ## Objective
+I copy and past the WebServer IP address in a new broser tab:http://35.89.175.154
 
 Connect the web application running on the web server to the Amazon RDS MySQL database.
 
@@ -202,7 +203,7 @@ The application uses the RDS database to store and retrieve Address Book informa
 ## Configuration
 
 Endpoint:
-[YOUR-RDS-ENDPOINT]
+[lab-db.c0egesud1gfd.us-west-2.rds.amazonaws.com]
 
 Database:
 lab
