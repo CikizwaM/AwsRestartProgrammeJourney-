@@ -187,7 +187,7 @@ Do not publish the database password or sensitive RDS information on GitHub.
 Use a placeholder in the GitHub repository:
 
 ```text
-[YOUR-RDS-ENDPOINT]
+[lab-db.c0egesud1gfd.us-west-2.rds.amazonaws.com]
 ```
 
 ## Screenshot
