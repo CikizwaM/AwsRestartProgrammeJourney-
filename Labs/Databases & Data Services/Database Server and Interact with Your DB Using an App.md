@@ -285,8 +285,6 @@ The RDS database is not publicly accessible.
 
 The DB Security Group allows MySQL traffic on port `3306` from the Web Security Group.
 
-Never upload the actual database password, AWS credentials, or other secrets to GitHub.
-
 ## Screenshot
 
 
