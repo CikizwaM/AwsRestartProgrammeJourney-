@@ -194,7 +194,7 @@ Use a placeholder in the GitHub repository:
 
 ## Task 4: Interact with Your Database
 ## Objective
-I copy and past the WebServer IP address in a new broser tab:http://35.89.175.154
+I copy and past the WebServer IP address in a new broser tab: http://35.89.175.154
 
 Connect the web application running on the web server to the Amazon RDS MySQL database.
 
