@@ -1,199 +1,228 @@
-# Amazon Inspector Lab
+# Amazon Inspector – Lambda Vulnerability Scanning and Remediation
 
-## Task 1: Activate Amazon Inspector
+## Overview
 
-### Objective
+In this lab, I used **Amazon Inspector** to scan AWS Lambda functions for software vulnerabilities. I activated Inspector, reviewed the security findings, investigated a vulnerable Python package, and then remediated the issue by updating the package used by the Lambda function.
 
-Activate **Amazon Inspector** to continuously scan the Lambda functions for security vulnerabilities.
+The main vulnerability I investigated was:
 
-### Steps
+**CVE-2023-32681 - requests**
 
-1. Open the **AWS Management Console**.
-
-2. Search for **Inspector** and choose **Amazon Inspector**.
-
-3. In the left navigation pane, choose **Activate Inspector**.
-
-4. Choose **Activate Inspector** again.
-
-5. Wait for the message:
-
-   > Welcome to Inspector. Your first scan is underway.
-
-6. If the **Feedback for Amazon Inspector** survey appears, choose **Cancel**.
-
-7. Close any banner messages.
-
-8. Refresh the page periodically.
-
-### Verification
-
-Navigate to:
-
-**Dashboard → Summary → Environment coverage → Lambda functions**
-
-Confirm that **Lambda functions** shows:
-
-```text
-100%
-```
-
-### Result
-
-Amazon Inspector is activated and scanning the Lambda functions.
+The remediation involved updating the `requests` package in the Lambda function and then verifying that Amazon Inspector detected the updated function and closed the vulnerability finding.
 
 ---
 
-## Task 2: Review the Inspected Resources
+# Task 1: Activating Amazon Inspector
 
-### Objective
+## Objective
 
-Review the vulnerabilities detected by Amazon Inspector in the Lambda functions.
+The first part of the lab involved enabling Amazon Inspector so that I could scan the Lambda functions in my AWS environment for known security vulnerabilities.
 
-### Task 2.1: Review Lambda Functions
+## What I Did
 
-1. In Amazon Inspector, choose **Findings**.
-2. Select **All findings**.
-3. Review the three vulnerability findings.
+I opened the AWS Management Console and searched for **Amazon Inspector**. Since Inspector had not previously been activated in the lab environment, I selected the option to activate the service.
 
-The findings should include the following information:
+After activation, Inspector displayed a message indicating that the initial scan was in progress.
 
-| Field             | Description                      |
-| ----------------- | -------------------------------- |
-| Severity          | Vulnerability severity           |
-| Impacted resource | Affected Lambda function         |
-| Title             | Description of the vulnerability |
+I then monitored the Inspector dashboard while the initial scan was running.
 
-### Vulnerability Reviewed
+## Environment Coverage
 
-Select:
+Once the scan completed, I checked the Inspector dashboard and confirmed that the Lambda functions had reached **100% environment coverage**.
 
-```text
-CVE-2023-32681 - requests
-```
+This confirmed that Amazon Inspector was successfully enabled and had started scanning the Lambda environment.
 
-4. Open the vulnerability details.
-5. Under **Vulnerability details**, choose the external link next to **Vulnerability ID**.
-6. Review the vulnerability information provided by the **National Vulnerability Database (NVD)**.
-7. Review the **Remediation** section.
+## Evidence
 
-### Finding
+**Amazon Inspector activation and Lambda coverage:**
 
-The vulnerability is related to an outdated version of the Python **requests** package.
+![Amazon Inspector Activation](images/task1-inspector-activated.png)
 
-The recommended remediation is to upgrade the package.
-
-### Result
-
-The vulnerable Lambda package was identified and the recommended remediation was reviewed.
+> **Screenshot:** Inspector dashboard showing the Lambda functions environment coverage.
 
 ---
 
-## Task 3: Remediate the Vulnerability
+# Task 2: Reviewing the Inspector Findings
 
-### Objective
+## Objective
 
-Update the Lambda function to remove the vulnerable version of the `requests` package and verify that Amazon Inspector closes the finding.
+After activating Inspector, I reviewed the security findings generated from the Lambda functions. This allowed me to identify the vulnerable resources and understand why they were being reported.
 
-### Task 3.1: Update the Lambda Function
+## Reviewing the Findings
 
-1. Open the **AWS Management Console**.
-2. Search for **Lambda**.
-3. Choose **Lambda**.
-4. Select the **get-request** function.
-5. In the code editor, open:
+I opened **Findings → All findings** in Amazon Inspector.
 
-```text
-requirements.txt
-```
+The findings showed vulnerabilities affecting the Lambda functions. I reviewed the severity, affected resources, and vulnerability titles to determine which issue needed to be investigated.
 
-6. Locate:
+One of the findings I identified was:
+
+**CVE-2023-32681 - requests**
+
+The finding had a **Medium** severity rating and identified a Lambda function as the impacted resource.
+
+## Vulnerability Investigation
+
+I selected the `CVE-2023-32681 - requests` finding to view the detailed vulnerability information.
+
+Within the vulnerability details, I reviewed the **Vulnerability ID** and followed the external reference to the **National Vulnerability Database (NVD)** to understand the vulnerability in more detail.
+
+I also reviewed the **Remediation** information provided by Amazon Inspector.
+
+The remediation indicated that the version of the Python `requests` package being used by the Lambda function was vulnerable and needed to be updated.
+
+## Evidence – Inspector Findings
+
+![Amazon Inspector Findings](images/task2-lambda-findings.png)
+
+> **Screenshot:** Amazon Inspector showing the `CVE-2023-32681 - requests` finding.
+
+## Evidence – Vulnerability Details
+
+![Vulnerability Details](images/task2-vulnerability-details.png)
+
+> **Screenshot:** Vulnerability details and remediation information for the `requests` package.
+
+---
+
+# Task 3: Remediating the Lambda Vulnerability
+
+## Objective
+
+The next stage of the lab involved applying the recommended remediation to the affected Lambda function and then verifying that Amazon Inspector no longer reported the vulnerability as active.
+
+## Updating the Lambda Function
+
+I opened the **AWS Lambda** console and selected the affected function:
+
+**`get-request`**
+
+I then opened the `requirements.txt` file in the Lambda code editor.
+
+The function was originally using the following version of the `requests` package:
 
 ```text
 requests==2.20.0
 ```
 
-7. Change it to:
+I identified this as the package version associated with the Inspector finding.
+
+To remediate the vulnerability, I changed the dependency to:
 
 ```text
 requests
 ```
 
-8. Choose **Deploy**.
+This removed the fixed version requirement and allowed the Lambda deployment to use an updated version of the package.
 
-### Expected Deployment Message
+## Evidence – Updated Package
 
-```text
-Successfully updated the function get-request
-```
+![Updated requirements.txt](images/task3-requirements.png)
 
----
-
-## Task 3.2: Verify the Remediation
-
-1. Return to **Amazon Inspector**.
-2. In the left navigation pane, choose **Findings → All findings**.
-3. Change **Finding status** from **Active** to **Closed**.
-4. Locate:
-
-```text
-CVE-2023-32681 - requests
-```
-
-### Expected Result
-
-The vulnerability appears under **Closed** findings.
-
-This confirms that the vulnerable package was successfully remediated.
-
-> **Note:** Amazon Inspector may take several minutes to complete the new scan. Refresh the page periodically.
+> **Screenshot:** The `requirements.txt` file after changing the vulnerable package dependency.
 
 ---
 
-## Task 3.3: Verify the Lambda Scan
+## Deploying the Updated Lambda Function
 
-1. In Amazon Inspector, choose **Resources coverage**.
-2. Select **Lambda functions**.
-3. Locate the **Last scanned** column.
-4. Expand the column if necessary to view the complete timestamp.
+After making the change, I deployed the updated Lambda function.
 
-### Expected Result
+The deployment completed successfully and the function was updated.
 
-The **get-request** Lambda function shows a recently updated **Last scanned** timestamp.
-
-This confirms that Amazon Inspector performed a new scan after the Lambda function was updated.
+This deployment also triggered Amazon Inspector to perform another scan of the Lambda function.
 
 ---
 
-## Screenshots
+# Verifying the Remediation
 
-### Amazon Inspector Activated
+## Checking the Inspector Finding
 
-*Add screenshot here.*
+After deploying the updated Lambda function, I returned to Amazon Inspector and opened:
 
-### Lambda Findings
+**Findings → All findings**
 
-*Add screenshot showing the `CVE-2023-32681 - requests` finding here.*
+I changed the finding status from **Active** to **Closed**.
 
-### Updated `requirements.txt`
+I then searched for:
 
-*Add screenshot showing:*
+**CVE-2023-32681 - requests**
 
-```text
-requests
-```
+The vulnerability appeared under the **Closed** findings.
 
-### Closed Finding
+This confirmed that the vulnerable package had been successfully remediated.
 
-*Add screenshot showing `CVE-2023-32681 - requests` under **Closed** findings.*
+## Evidence – Closed Finding
 
-### Lambda Last Scanned
+![Closed Inspector Finding](images/task3-closed-finding.png)
 
-*Add screenshot showing the updated **Last scanned** timestamp.*
+> **Screenshot:** Amazon Inspector showing `CVE-2023-32681 - requests` as a closed finding.
 
 ---
 
-## Summary
+# Verifying the Latest Lambda Scan
 
-In this lab, Amazon Inspector was activated to scan AWS Lambda functions for vulnerabilities. The `CVE-2023-32681 - requests` vulnerability was identified and remediated by updating the `requests` package. The finding was then verified as **Closed**, confirming successful remediation.
+I also checked the **Resources coverage → Lambda functions** section in Amazon Inspector.
+
+The **Last scanned** timestamp for the Lambda function had been updated following the deployment.
+
+This provided additional confirmation that Inspector had scanned the updated version of the Lambda function.
+
+## Evidence – Last Scanned
+
+![Lambda Last Scanned](images/task3-last-scanned.png)
+
+> **Screenshot:** Inspector showing the updated `Last scanned` timestamp for the Lambda function.
+
+---
+
+# Results
+
+The lab was completed successfully.
+
+I:
+
+* Activated **Amazon Inspector** for the AWS environment.
+* Confirmed that the Lambda functions reached **100% environment coverage**.
+* Reviewed the vulnerabilities identified by Inspector.
+* Investigated **CVE-2023-32681 - requests**.
+* Identified the vulnerable `requests` package version in the `get-request` Lambda function.
+* Updated the package dependency in `requirements.txt`.
+* Deployed the updated Lambda function.
+* Waited for Amazon Inspector to perform a new scan.
+* Confirmed that the vulnerability appeared under **Closed findings**.
+* Verified that the Lambda function had a new **Last scanned** timestamp.
+
+## Key Learning
+
+This lab demonstrated how **Amazon Inspector** can be used to continuously identify software vulnerabilities in AWS resources such as Lambda functions.
+
+I also learned how Inspector findings can be used to identify a vulnerable third-party dependency and how updating the dependency can remediate the vulnerability. Finally, I verified the remediation through the Inspector findings and the updated scan timestamp.
+
+---
+
+# Screenshots
+
+The following screenshots provide evidence of the work completed during the lab:
+
+| Task   | Evidence                                               |
+| ------ | ------------------------------------------------------ |
+| Task 1 | Amazon Inspector activated and Lambda coverage at 100% |
+| Task 2 | Lambda vulnerability findings                          |
+| Task 2 | CVE-2023-32681 vulnerability details                   |
+| Task 3 | Updated `requirements.txt`                             |
+| Task 3 | Vulnerability shown as Closed                          |
+| Task 3 | Updated Lambda Last Scanned timestamp                  |
+
+---
+
+# Technologies Used
+
+* **Amazon Inspector**
+* **AWS Lambda**
+* **Amazon Web Services (AWS)**
+* **Python**
+* **Python `requests` package**
+* **National Vulnerability Database (NVD)**
+* **CVE vulnerability management**
+
+
 
