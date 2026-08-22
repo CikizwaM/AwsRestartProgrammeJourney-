@@ -36,7 +36,7 @@ This confirmed that Amazon Inspector was successfully enabled and had started sc
 
 **Amazon Inspector activation and Lambda coverage:**
 
-![Amazon Inspector Activation](images/task1-inspector-activated.png)
+![Amazon Inspector Activation](Images/Task1.png)
 
 > **Screenshot:** Inspector dashboard showing the Lambda functions environment coverage.
 
