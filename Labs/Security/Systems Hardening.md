@@ -62,11 +62,11 @@ I monitored the operation until the patching process completed.
 
 ### Evidence
 
-![Linux Patch Manager](images/task1-linux-patching.png)
+![Linux Patch Manager](images/Task1.png)
 
 > **Screenshot:** Patch Manager showing the Linux patching operation and the targeted Linux instances.
 
-![Linux Patch Results](images/task1-linux-patch-results.png)
+![Linux Patch Results](images/Task1-1.png)
 
 > **Screenshot:** Patch operation results showing the completed Linux instance patching.
 
@@ -125,7 +125,7 @@ I then created the custom patch baseline.
 
 ### Evidence
 
-![Windows Custom Patch Baseline](images/task2-windows-patch-baseline.png)
+![Windows Custom Patch Baseline](images/Task2.png)
 
 > **Screenshot:** Custom `WindowsServerSecurityUpdates` patch baseline and its configuration.
 
@@ -145,7 +145,7 @@ This association allows Patch Manager to apply the custom Windows baseline to in
 
 ### Evidence
 
-![Windows Patch Group](images/task2-windows-patch-group.png)
+![Windows Patch Group](images/Task2-2.png)
 
 > **Screenshot:** The custom Windows baseline associated with the `WindowsProd` patch group.
 
@@ -176,7 +176,7 @@ This allowed Systems Manager Patch Manager to identify the Windows instances tha
 
 ### Evidence
 
-![Windows Instance Tag](images/task3-windows-tag.png)
+![Windows Instance Tag](images/Task3.png)
 
 > **Screenshot:** The `Patch Group = WindowsProd` tag applied to a Windows instance.
 
@@ -214,11 +214,11 @@ This demonstrated how Patch Manager uses **Run Command** and the Systems Manager
 
 ### Evidence
 
-![Windows Patch Execution](images/task3-windows-patch-execution.png)
+![Windows Patch Execution](images/Task3-1.png)
 
 > **Screenshot:** Windows patching execution showing the targeted instances.
 
-![Windows Run Command Output](images/task3-run-command-output.png)
+![Windows Run Command Output](images/Task3-2.png)
 
 > **Screenshot:** Run Command output showing the patching operation and `WindowsProd` patch group information.
 
@@ -251,7 +251,7 @@ The six compliant instances consisted of:
 
 ### Evidence
 
-![Patch Compliance Dashboard](images/task4-compliance-dashboard.png)
+![Patch Compliance Dashboard](images/Task4.png)
 
 > **Screenshot:** Patch Manager compliance dashboard showing all six instances as compliant.
 
@@ -273,12 +273,6 @@ I reviewed the node patching details, including:
 
 This allowed me to confirm not only the overall compliance status but also the patching information associated with each managed node.
 
-### Evidence
-
-![Compliance Reporting](images/task4-compliance-reporting.png)
-
-> **Screenshot:** Compliance reporting showing the Linux and Windows instances as compliant.
-
 ---
 
 # Task 4.2: Reviewing Installed Patches
@@ -291,7 +285,7 @@ I also reviewed the **Installed Time** information to confirm when the patches w
 
 ### Evidence
 
-![Installed Windows Patches](images/task4-installed-patches.png)
+![Installed Windows Patches](images/Task4-1.png)
 
 > **Screenshot:** Windows node Patch tab showing installed patches and installation times.
 
