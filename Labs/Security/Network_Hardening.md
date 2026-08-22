@@ -72,13 +72,13 @@ The remediation indicated that the version of the Python `requests` package bein
 
 ## Evidence – Inspector Findings
 
-![Amazon Inspector Findings](images/task2-lambda-findings.png)
+![Amazon Inspector Findings](task2.png)
 
 > **Screenshot:** Amazon Inspector showing the `CVE-2023-32681 - requests` finding.
 
 ## Evidence – Vulnerability Details
 
-![Vulnerability Details](images/task2-vulnerability-details.png)
+![Vulnerability Details](task2-1.png)
 
 > **Screenshot:** Vulnerability details and remediation information for the `requests` package.
 
@@ -116,7 +116,7 @@ This removed the fixed version requirement and allowed the Lambda deployment to 
 
 ## Evidence – Updated Package
 
-![Updated requirements.txt](images/task3-requirements.png)
+![Updated requirements.txt](Task3.png)
 
 > **Screenshot:** The `requirements.txt` file after changing the vulnerable package dependency.
 
@@ -152,7 +152,7 @@ This confirmed that the vulnerable package had been successfully remediated.
 
 ## Evidence – Closed Finding
 
-![Closed Inspector Finding](images/task3-closed-finding.png)
+![Closed Inspector Finding](task3-1.png)
 
 > **Screenshot:** Amazon Inspector showing `CVE-2023-32681 - requests` as a closed finding.
 
@@ -168,7 +168,7 @@ This provided additional confirmation that Inspector had scanned the updated ver
 
 ## Evidence – Last Scanned
 
-![Lambda Last Scanned](images/task3-last-scanned.png)
+![Lambda Last Scanned](Task3-2.png)
 
 > **Screenshot:** Inspector showing the updated `Last scanned` timestamp for the Lambda function.
 
