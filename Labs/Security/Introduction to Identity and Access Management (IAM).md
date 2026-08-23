@@ -35,7 +35,7 @@ After configuring the requirements, I selected **Save changes**.
 
 The custom password policy was successfully applied at the AWS account level.
 
-![Password Policy Configuration](./images/SE-04-password-policy.png)
+![Password Policy Configuration](./images/Task1.png)
 ---
 
 # Task 2: Explore IAM Users and User Groups
@@ -48,7 +48,7 @@ I opened **IAM → Users** and reviewed the pre-created users:
 * `user-2`
 * `user-3`
 
-![User Details](./images/SE-04-user-details.png)
+![User Details](./images/Task2.png)
 
 ### user-1
 
@@ -58,9 +58,9 @@ I inspected `user-1` and confirmed that:
 * The user was not initially a member of any group.
 * A console password was configured.
 
-![Managed Policy Details](./images/SE-04-managed-policy-details.png)
+![Managed Policy Details](./images/Task2-2.png)
 
-![Inline Policy Details](./images/SE-04-inline-policy-details.png)
+![Inline Policy Details](./images/Task2-3.png)
 
 This demonstrated that permissions can be provided through IAM groups rather than attaching policies directly to individual users.
 
@@ -73,8 +73,6 @@ I reviewed the following pre-created groups:
 * `EC2-Admin`
 * `EC2-Support`
 * `S3-Support`
-
-![Add Users to Group](./images/SE-04-add-users.png)
 
 ### EC2-Support
 
@@ -212,7 +210,7 @@ From the IAM Dashboard, I located the:
 
 I copied the URL and used a private/incognito browser window to test each IAM user's permissions independently.
 
-![IAM Sign-in URL](./images/SE-04-signin-url.png)
+![IAM Sign-in URL](./images/Task4.png)
 
 ---
 
@@ -227,7 +225,7 @@ Password: Lab-Password1
 
 I opened **Amazon S3** and was able to view the available S3 buckets and their contents.
 
-![S3 Access user-1](./images/SE-04-user1-s3.png)
+![S3 Access user-1](./images/Task4-1.png)
 
 ### EC2 Access Test
 
@@ -239,11 +237,11 @@ The following authorization error was displayed:
 You are not authorized to perform this operation.
 ```
 
-![EC2 View user-2](./images/SE-04-user2-ec2-view.png)
+![EC2 View user-2](./images/Task4-3.png)
 
-![EC2 Stop Denied user-2](./images/SE-04-user2-ec2-denied.png)
+![EC2 Stop Denied user-2](./images/Task4-2.png)
 
-![S3 Denied user-2](./images/SE-04-user2-s3-denied.png)
+![S3 Denied user-2](./images/Task4-4.png)
 
 `user-1` could access S3 but could not access EC2.
 
@@ -318,7 +316,7 @@ I selected the instance and chose:
 
 I confirmed the action by selecting **Stop**.
 
-![EC2 Stop Success user-3](./images/SE-04-user3-ec2-stop.png)
+![EC2 Stop Success user-3](./images/Task4-5.png)
 
 
 The EC2 instance entered the:
