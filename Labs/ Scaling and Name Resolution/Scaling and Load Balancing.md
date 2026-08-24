@@ -1,398 +1,519 @@
-AWS Auto Scaling and Load Balancing Lab
-Overview
+# AWS Auto Scaling and Load Balancing Lab
+
+## Overview
 
 In this lab, I created an Amazon Machine Image (AMI) from an existing EC2 instance and used it to build an Auto Scaling environment. I created an Application Load Balancer, target group, launch template, and Auto Scaling group. I then tested load balancing and verified that Auto Scaling launched additional EC2 instances when CPU utilization increased.
 
-Services Used
-Amazon EC2
-Amazon Machine Images (AMI)
-Application Load Balancer (ALB)
-Target Groups
-EC2 Launch Templates
-EC2 Auto Scaling
-Amazon CloudWatch
-Lab Architecture
+## AWS Services Used
 
-The completed setup consisted of:
+* Amazon EC2
+* Amazon Machine Images (AMI)
+* Application Load Balancer
+* Target Groups
+* EC2 Launch Templates
+* EC2 Auto Scaling
+* Amazon CloudWatch
 
-                    Internet
-                       │
-                       ▼
-              ┌─────────────────┐
-              │    LabELB       │
-              │ Application     │
-              │ Load Balancer   │
-              └────────┬────────┘
-                       │
-                lab-target-group
-                       │
-          ┌────────────┴────────────┐
-          │                         │
-          ▼                         ▼
-   ┌─────────────┐           ┌─────────────┐
-   │ Lab Instance│           │ Lab Instance│
-   │ Private     │           │ Private     │
-   │ Subnet 1    │           │ Subnet 2    │
-   └─────────────┘           └─────────────┘
-          │                         │
-          └────────────┬────────────┘
-                       │
-                 Auto Scaling
-                       │
-             ┌─────────┴─────────┐
-             │                   │
-        CPU > 50%          CPU decreases
-             │                   │
-             ▼                   ▼
-       Add instances       Remove instances
-Task 1: Creating an AMI for Auto Scaling
+---
 
-In this task, I created an AMI from the existing Web Server 1 EC2 instance. The AMI saves the contents of the boot disk so that identical instances can be launched later.
+# Task 1: Creating an AMI for Auto Scaling
 
-Steps
-I opened the Amazon EC2 Management Console.
-From the left navigation pane, I selected Instances.
-I selected the running Web Server 1 instance.
-From Actions, I selected:
-Image and templates → Create image
-I configured the image with the following values:
-Setting	Value
-Image name	Web Server AMI
-Image description	Lab AMI for Web Server
-I selected Create image.
-AWS displayed the confirmation screen with the new AMI ID.
-Screenshot
+### Objective
 
-Screenshot: AMI successfully created
+In this task, I created an AMI from the existing **Web Server 1** EC2 instance. The AMI saves the contents of the boot disk so that new instances can later be launched with identical content.
 
-![AMI Created](./images/Task1-1.png)
-Task 2: Creating a Load Balancer
+### Steps
+
+1. I opened the **AWS Management Console**.
+
+2. In the Search bar, I entered `EC2`.
+
+3. I opened the **Amazon EC2 Management Console**.
+
+4. From the left navigation pane, I selected **Instances**.
+
+5. I selected the running **Web Server 1** instance.
+
+6. From **Actions**, I selected:
+
+   **Image and templates → Create image**
+
+7. I entered the following values:
+
+| Setting           | Value                    |
+| ----------------- | ------------------------ |
+| Image name        | `Web Server AMI`         |
+| Image description | `Lab AMI for Web Server` |
+
+8. I selected **Create image**.
+9. I confirmed that AWS displayed the AMI ID for the newly created image.
+
+### Screenshot
+
+![Task 1 - AMI Created](./images/Task1-1.png)
+
+**Screenshot:** The newly created `Web Server AMI` and its AMI ID.
+
+---
+
+# Task 2: Creating a Load Balancer
+
+### Objective
 
 In this task, I created an Application Load Balancer to distribute traffic across multiple EC2 instances and Availability Zones.
 
-Load Balancer Configuration
+## Step 2.1: Create the Application Load Balancer
 
-I selected Create load balancer → Application Load Balancer.
+1. From the EC2 navigation pane, I selected **Load Balancers**.
+2. I selected **Create load balancer**.
+3. Under **Application Load Balancer**, I selected **Create**.
+4. For **Load balancer name**, I entered:
 
-I configured:
+```text
+LabELB
+```
 
-Setting	Value
-Load balancer name	LabELB
-VPC	Lab VPC
-Availability Zone 1	Public Subnet 1
-Availability Zone 2	Public Subnet 2
-Security group	Web Security Group
+### Network Configuration
 
-I removed the default security group and selected the existing Web Security Group.
+I configured the following:
 
-Screenshot
+| Setting                  | Value                |
+| ------------------------ | -------------------- |
+| VPC                      | `Lab VPC`            |
+| First Availability Zone  | `Public Subnet 1`    |
+| Second Availability Zone | `Public Subnet 2`    |
+| Security group           | `Web Security Group` |
 
-Screenshot: Application Load Balancer configuration
+5. I removed the default security group.
+6. I selected **Web Security Group**.
 
-![Load Balancer Configuration](./images/Task2-1.png)
-Creating the Target Group
+### Screenshot
 
-I created a target group with the following configuration:
+![Task 2 - Load Balancer Configuration](./images/Task2-1.png)
 
-Setting	Value
-Target type	Instances
-Target group name	lab-target-group
+**Screenshot:** Application Load Balancer configuration showing `LabELB`, `Lab VPC`, both public subnets, and `Web Security Group`.
 
-I then created the target group and returned to the Load Balancer configuration.
+---
 
-Screenshot
+## Step 2.2: Create the Target Group
 
-Screenshot: Target group created
+1. Under **Listeners and routing**, I selected **Create target group**.
+2. In the new browser tab, I configured:
 
-![Target Group](./images/Task2-2.png)
+| Setting           | Value              |
+| ----------------- | ------------------ |
+| Target type       | `Instances`        |
+| Target group name | `lab-target-group` |
 
-I selected lab-target-group as the default forwarding target and created the load balancer.
+3. I selected **Next**.
+4. On the **Register targets** page, I selected **Create target group**.
+5. I closed the Target Groups browser tab.
 
-Screenshot
+### Screenshot
 
-Screenshot: LabELB successfully created
+![Task 2 - Target Group](./images/Task2-2.png)
 
-![LabELB Created](./images/Task2-3.png)
+**Screenshot:** The `lab-target-group` target group.
 
-I copied the DNS name of the load balancer and saved it for testing later in the lab.
+---
 
-Task 3: Creating a Launch Template
+## Step 2.3: Complete the Load Balancer
 
-In this task, I created a launch template that the Auto Scaling group would use to launch EC2 instances. The template contains information such as the AMI, instance type, key pair, and security group.
+1. I returned to the Load Balancer browser tab.
+2. I refreshed the **Forward to** dropdown.
+3. I selected:
 
-I opened EC2 → Launch Templates and selected Create launch template.
+```text
+lab-target-group
+```
 
-Launch Template Configuration
-Setting	Value
-Launch template name	lab-app-launch-template
-Template version description	A web server for the load test app
-Auto Scaling guidance	Enabled
-AMI	Web Server AMI
-Instance type	t3.micro
-Key pair	Don't include in launch template
-Security group	Web Security Group
+4. I selected **Create load balancer**.
+5. I confirmed that AWS displayed a successful creation message for:
 
-I then selected Create launch template.
+```text
+LabELB
+```
 
-AWS confirmed that:
+6. I selected **View load balancer**.
+7. I copied the **DNS name** and saved it for use later in the lab.
 
-Successfully created lab-app-launch-template
-Screenshot
+### Screenshot
 
-Screenshot: Launch template successfully created
+![Task 2 - Load Balancer Created](./images/Task2-3.png)
 
-![Launch Template](./images/Task3-1.png)
-Task 4: Creating an Auto Scaling Group
+**Screenshot:** Successfully created `LabELB` with its DNS name.
 
-I used the launch template to create an Auto Scaling group.
+---
 
-Auto Scaling Group
+# Task 3: Creating a Launch Template
 
-I selected:
+### Objective
 
+In this task, I created a launch template that the Auto Scaling group would use to launch EC2 instances.
+
+### Steps
+
+1. I opened **EC2**.
+2. From the left navigation pane, I selected **Launch Templates**.
+3. I selected **Create launch template**.
+4. I configured the launch template as follows:
+
+| Setting                      | Value                                |
+| ---------------------------- | ------------------------------------ |
+| Launch template name         | `lab-app-launch-template`            |
+| Template version description | `A web server for the load test app` |
+| Auto Scaling guidance        | Selected                             |
+| AMI                          | `Web Server AMI`                     |
+| Instance type                | `t3.micro`                           |
+| Key pair                     | `Don't include in launch template`   |
+| Security group               | `Web Security Group`                 |
+
+5. I selected **Create launch template**.
+6. I confirmed that the launch template was successfully created.
+
+### Screenshot
+
+![Task 3 - Launch Template](./images/Task3-1.png)
+
+**Screenshot:** Successfully created `lab-app-launch-template`.
+
+---
+
+# Task 4: Creating an Auto Scaling Group
+
+### Objective
+
+In this task, I used the launch template to create an Auto Scaling group.
+
+## Step 4.1: Create the Auto Scaling Group
+
+1. I selected:
+
+```text
 lab-app-launch-template
+```
 
-and chose:
+2. From **Actions**, I selected:
 
-Actions → Create Auto Scaling group
+```text
+Create Auto Scaling group
+```
 
-For the Auto Scaling group name, I entered:
+3. For **Auto Scaling group name**, I entered:
 
+```text
 Lab Auto Scaling Group
-Screenshot
+```
 
-Screenshot: Auto Scaling group creation
+4. I selected **Next**.
 
-![Auto Scaling Group](./images/Task4-1.png)
-Network Configuration
+### Screenshot
+
+![Task 4 - Auto Scaling Group](./images/Task4-1.png)
+
+---
+
+## Step 4.2: Configure the Network
 
 I selected:
 
-Setting	Value
-VPC	Lab VPC
-Subnet 1	Private Subnet 1 (10.0.1.0/24)
-Subnet 2	Private Subnet 2 (10.0.3.0/24)
+| Setting  | Value                            |
+| -------- | -------------------------------- |
+| VPC      | `Lab VPC`                        |
+| Subnet 1 | `Private Subnet 1 (10.0.1.0/24)` |
+| Subnet 2 | `Private Subnet 2 (10.0.3.0/24)` |
 
-Load Balancing Configuration
+I selected **Next**.
 
-Under Configure advanced options, I selected:
+---
 
+## Step 4.3: Configure Load Balancing
+
+Under **Configure advanced options**, I selected:
+
+```text
 Attach to an existing load balancer
+```
 
-Then:
+Then I selected:
 
+```text
 Choose from your load balancer target groups
+```
 
-I selected:
+For the existing target group, I selected:
 
+```text
 lab-target-group | HTTP
+```
 
-For the health check type, I selected:
+For **Health check type**, I selected:
 
+```text
 ELB
+```
 
-Screenshot
+I then selected **Next**.
 
-Screenshot: Auto Scaling load balancing configuration
+### Screenshot
 
-![ASG Load Balancing](./images/Task4-2.png)
-Group Size and Scaling Policy
+![Task 4 - Load Balancing Configuration](./images/Task4-2.png)
 
-I configured the group size as:
+---
 
-Setting	Value
-Desired capacity	2
-Minimum capacity	2
-Maximum capacity	4
+## Step 4.4: Configure Group Size and Scaling
+
+I configured the Auto Scaling group as follows:
+
+| Setting          | Value |
+| ---------------- | ----: |
+| Desired capacity |   `2` |
+| Minimum capacity |   `2` |
+| Maximum capacity |   `4` |
 
 For the scaling policy, I selected:
 
+```text
 Target tracking scaling policy
+```
 
-Then configured:
+I configured:
 
-Setting	Value
-Metric type	Average CPU utilization
-Target value	50
+| Setting      | Value                     |
+| ------------ | ------------------------- |
+| Metric type  | `Average CPU utilization` |
+| Target value | `50`                      |
 
-This allows Auto Scaling to maintain average CPU utilization around 50% and automatically add or remove capacity as needed.
+This configuration allows Auto Scaling to adjust the number of instances to maintain average CPU utilization around 50%.
 
-Screenshot
+### Screenshot
 
-Screenshot: Auto Scaling group size and scaling policy
+![Task 4 - Scaling Policy](./images/Task4-3.png)
 
-![Scaling Policy](./images/Task4-3.png)
-Adding the Instance Tag
+---
+
+## Step 4.5: Add a Tag
 
 I added the following tag:
 
-Key	Value
-Name	Lab Instance
+| Key    | Value          |
+| ------ | -------------- |
+| `Name` | `Lab Instance` |
 
-Then I selected Create Auto Scaling group.
+I then selected **Create Auto Scaling group**.
 
-Screenshot
+The Auto Scaling group initially launched instances to reach the desired capacity of two.
 
-Screenshot: Auto Scaling group successfully created
+### Screenshot
 
-![ASG Created](./images/Task4-4.png)
+![Task 4 - Auto Scaling Group Created](./images/Task4-4.png)
 
-The Auto Scaling group initially had zero instances while AWS launched instances to reach the desired capacity of two.
+---
 
-Task 5: Verifying Load Balancing
+# Task 5: Verifying That Load Balancing Is Working
 
-In this task, I verified that the Auto Scaling instances were running and registered with the target group.
+### Objective
 
-I opened:
+In this task, I verified that the Auto Scaling instances were running, registered with the target group, and passing their health checks.
 
-EC2 → Instances
+## Step 5.1: Verify EC2 Instances
 
-I confirmed that two new instances named:
+1. I opened **EC2 → Instances**.
+2. I confirmed that two new instances named:
 
+```text
 Lab Instance
+```
 
 were running.
 
-Screenshot
+### Screenshot
 
-Screenshot: Lab instances running
+![Task 5 - Lab Instances](./images/Task5-1.png)
 
-![Lab Instances](./images/Task5-1.png)
-Checking Target Health
+---
 
-I opened:
+## Step 5.2: Verify Target Health
 
-Load Balancing → Target Groups
+1. I opened **Load Balancing → Target Groups**.
+2. I selected:
 
-and selected:
-
+```text
 lab-target-group
+```
 
-Under Registered targets, I confirmed that the two Lab Instance targets appeared.
+3. Under **Registered targets**, I confirmed that the two `Lab Instance` targets were listed.
+4. I waited until both instances showed:
 
-I waited until both instances showed:
-
+```text
 healthy
+```
 
-A healthy status indicates that the instances passed the load balancer health check and can receive traffic.
+A healthy status indicates that the instances passed the load balancer health check and are able to receive traffic.
 
-Screenshot
+### Screenshot
 
-Screenshot: Healthy target instances
+![Task 5 - Healthy Targets](./images/Task5-2.png)
 
-![Healthy Targets](./images/Task5-2.png)
-Testing the Load Balancer
+---
 
-I opened a new browser tab and entered the LabELB DNS name that I copied earlier.
+## Step 5.3: Test the Load Balancer
 
-The Load Test application appeared.
+1. I opened a new browser tab.
+2. I entered the **LabELB DNS name** that I saved earlier.
+3. I pressed **Enter**.
+4. The **Load Test** application appeared.
 
-This confirmed that the load balancer received the request and forwarded it to one of the EC2 instances.
+This confirmed that the load balancer received the request and forwarded it to an EC2 instance.
 
-Screenshot
+### Screenshot
 
-Screenshot: Load Test application
+![Task 5 - Load Test Application](./images/Task5-3.png)
 
-![Load Test Application](./images/Task5-3.png)
-Task 6: Testing Auto Scaling
+---
 
-In this task, I tested whether the Auto Scaling group could automatically launch additional instances when CPU utilization increased.
+# Task 6: Testing Auto Scaling
 
-The Auto Scaling group was configured with:
+### Objective
 
-Minimum: 2
-Desired: 2
-Maximum: 4
-Checking CloudWatch Alarms
+In this task, I increased the application load to cause the Auto Scaling group to launch additional EC2 instances.
 
-I opened:
+## Step 6.1: Check CloudWatch Alarms
 
-CloudWatch → Alarms → All alarms
+1. I opened **CloudWatch**.
+2. From the left navigation pane, I selected **Alarms → All alarms**.
+3. I confirmed that two alarms were automatically created by the Auto Scaling group.
+4. I selected the alarm containing:
 
-Two alarms created automatically by the Auto Scaling group were displayed.
-
-I selected the alarm containing:
-
+```text
 AlarmHigh
+```
 
-The initial state was:
+5. I confirmed that the initial state was:
 
+```text
 OK
+```
 
-The alarm monitors CPU utilization above 50%.
+The alarm monitors CPU utilization above the configured 50% target.
 
-Screenshot
+### Screenshot
 
-Screenshot: CloudWatch AlarmHigh alarm
+![Task 6 - CloudWatch Alarm](./images/Task6-1.png)
 
-![CloudWatch Alarm](./images/Task6-1.png)
-Generating Load
+---
 
-I returned to the Load Test application.
+## Step 6.2: Generate CPU Load
 
-Next to the AWS logo, I selected:
+1. I returned to the browser tab containing the **Load Test** application.
+2. Next to the AWS logo, I selected:
 
+```text
 Load Test
+```
 
-This caused the application to generate a high CPU load. The page automatically refreshed while the load was being generated.
+3. The application began generating a high CPU load.
+4. I kept the Load Test browser tab open.
 
-Screenshot
+### Screenshot
 
-Screenshot: Load Test generating CPU load
+![Task 6 - Generating Load](./images/Task6-2.png)
 
-![Generating Load](./images/Task6-2.png)
-Monitoring Auto Scaling
+---
 
-I returned to the CloudWatch console and refreshed the alarms periodically.
+## Step 6.3: Monitor the Alarm
 
-The AlarmHigh alarm eventually changed to:
+I returned to the CloudWatch console and refreshed the alarms.
 
+The **AlarmHigh** alarm eventually changed to:
+
+```text
 In alarm
+```
 
-The CPU utilization increased above the 50% target.
+The CPU utilization increased above the 50% threshold, causing Auto Scaling to add capacity.
 
-Screenshot
+### Screenshot
 
-Screenshot: AlarmHigh in alarm state
+![Task 6 - Alarm In Alarm](./images/Task6-3.png)
 
-![Alarm In Alarm](./images/Task6-3.png)
-Verifying Additional Instances
+---
 
-I returned to:
+## Step 6.4: Verify Additional Instances
 
-EC2 → Instances
+1. I returned to **EC2 → Instances**.
+2. I confirmed that more than two instances named:
 
-I confirmed that more than two instances named:
-
+```text
 Lab Instance
+```
 
-were now running.
+were running.
 
-This demonstrated that the Auto Scaling group automatically launched additional instances in response to the increased CPU load.
+This demonstrated that the Auto Scaling group automatically launched additional instances in response to the increased CPU utilization.
 
-Screenshot
+### Screenshot
 
-Screenshot: Additional instances launched
+![Task 6 - Additional Instances](./images/Task6-4.png)
 
-![Auto Scaling Instances](./images/Task6-4.png)
-Task 7: Terminating Web Server 1
+---
 
-After creating the AMI and Auto Scaling environment, the original Web Server 1 instance was no longer required.
+# Task 7: Terminating the Web Server 1 Instance
 
-I selected:
+### Objective
 
-Web Server 1
+The original **Web Server 1** instance was used to create the AMI. After the Auto Scaling environment was created, the original instance was no longer required.
 
-Then selected:
+### Steps
 
-Instance state → Terminate instance
+1. I opened **EC2 → Instances**.
+2. I selected **Web Server 1**.
+3. From **Instance state**, I selected:
 
-I confirmed the termination by selecting:
+```text
+Terminate instance
+```
 
-Terminate
+4. I selected **Terminate** to confirm.
 
-Screenshot
+### Screenshot
 
-Screenshot: Web Server 1 terminated
+![Task 7 - Web Server Terminated](./images/Task7-1.png)
 
-![Web Server Terminated](./images/Task7-1.png)
+---
+
+# Optional Challenge: Creating an AMI Using AWS CLI
+
+The lab also included an optional AWS CLI challenge.
+
+The challenge required:
+
+1. Connecting to an EC2 instance using **EC2 Instance Connect**.
+2. Opening **AWS Details** and displaying the AWS CLI information.
+3. Configuring AWS credentials.
+4. Creating an AMI using AWS CLI.
+5. Providing the AMI name and EC2 instance ID.
+
+### Screenshot
+
+![Optional Challenge - AWS CLI](./images/Optional-1.png)
+
+---
+
+# Final Results
+
+By completing this lab, I successfully:
+
+* Created an **AMI** from an EC2 instance.
+* Created an **Application Load Balancer**.
+* Created a **target group**.
+* Created an **EC2 launch template**.
+* Created an **Auto Scaling group**.
+* Configured Auto Scaling across two private subnets.
+* Configured a target tracking scaling policy using **Average CPU utilization**.
+* Set the Auto Scaling target to **50% CPU utilization**.
+* Verified that EC2 instances passed the load balancer health checks.
+* Tested the application through the Application Load Balancer.
+* Used **CloudWatch alarms** to monitor CPU utilization.
+* Generated additional CPU load and verified that Auto Scaling launched additional instances.
+* Terminated the original **Web Server 1** instance.
