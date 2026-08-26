@@ -50,7 +50,7 @@ In this task, I created an AMI from the existing **Web Server 1** EC2 instance. 
 
 ### Screenshot
 
-![Task 1 - AMI Created](./images/Task1-1.png)
+![Task 1 - AMI Created](./Images/Task1.png)
 
 **Screenshot:** The newly created `Web Server AMI` and its AMI ID.
 
@@ -89,7 +89,7 @@ I configured the following:
 
 ### Screenshot
 
-![Task 2 - Load Balancer Configuration](./images/Task2-1.png)
+![Task 2 - Load Balancer Configuration](./Images/Task2.png)
 
 **Screenshot:** Application Load Balancer configuration showing `LabELB`, `Lab VPC`, both public subnets, and `Web Security Group`.
 
@@ -108,12 +108,6 @@ I configured the following:
 3. I selected **Next**.
 4. On the **Register targets** page, I selected **Create target group**.
 5. I closed the Target Groups browser tab.
-
-### Screenshot
-
-![Task 2 - Target Group](./images/Task2-2.png)
-
-**Screenshot:** The `lab-target-group` target group.
 
 ---
 
@@ -136,12 +130,6 @@ LabELB
 
 6. I selected **View load balancer**.
 7. I copied the **DNS name** and saved it for use later in the lab.
-
-### Screenshot
-
-![Task 2 - Load Balancer Created](./images/Task2-3.png)
-
-**Screenshot:** Successfully created `LabELB` with its DNS name.
 
 ---
 
@@ -173,7 +161,7 @@ In this task, I created a launch template that the Auto Scaling group would use 
 
 ### Screenshot
 
-![Task 3 - Launch Template](./images/Task3-1.png)
+![Task 3 - Launch Template](./Images/Task3.png)
 
 **Screenshot:** Successfully created `lab-app-launch-template`.
 
@@ -206,10 +194,6 @@ Lab Auto Scaling Group
 ```
 
 4. I selected **Next**.
-
-### Screenshot
-
-![Task 4 - Auto Scaling Group](./images/Task4-1.png)
 
 ---
 
@@ -257,8 +241,6 @@ I then selected **Next**.
 
 ### Screenshot
 
-![Task 4 - Load Balancing Configuration](./images/Task4-2.png)
-
 ---
 
 ## Step 4.4: Configure Group Size and Scaling
@@ -286,10 +268,6 @@ I configured:
 
 This configuration allows Auto Scaling to adjust the number of instances to maintain average CPU utilization around 50%.
 
-### Screenshot
-
-![Task 4 - Scaling Policy](./images/Task4-3.png)
-
 ---
 
 ## Step 4.5: Add a Tag
@@ -306,7 +284,7 @@ The Auto Scaling group initially launched instances to reach the desired capacit
 
 ### Screenshot
 
-![Task 4 - Auto Scaling Group Created](./images/Task4-4.png)
+![Task 4 - Auto Scaling Group Created](./Images/Task4.png)
 
 ---
 
@@ -326,10 +304,6 @@ Lab Instance
 ```
 
 were running.
-
-### Screenshot
-
-![Task 5 - Lab Instances](./images/Task5-1.png)
 
 ---
 
@@ -353,7 +327,7 @@ A healthy status indicates that the instances passed the load balancer health ch
 
 ### Screenshot
 
-![Task 5 - Healthy Targets](./images/Task5-2.png)
+![Task 5 - Healthy Targets](./Images/Task5.png)
 
 ---
 
@@ -368,7 +342,7 @@ This confirmed that the load balancer received the request and forwarded it to a
 
 ### Screenshot
 
-![Task 5 - Load Test Application](./images/Task5-3.png)
+![Task 5 - Load Test Application](./Images/Task5-1.png)
 
 ---
 
@@ -399,7 +373,7 @@ The alarm monitors CPU utilization above the configured 50% target.
 
 ### Screenshot
 
-![Task 6 - CloudWatch Alarm](./images/Task6-1.png)
+![Task 6 - CloudWatch Alarm](./Images/Task6.png)
 
 ---
 
@@ -414,10 +388,6 @@ Load Test
 
 3. The application began generating a high CPU load.
 4. I kept the Load Test browser tab open.
-
-### Screenshot
-
-![Task 6 - Generating Load](./images/Task6-2.png)
 
 ---
 
@@ -435,7 +405,7 @@ The CPU utilization increased above the 50% threshold, causing Auto Scaling to a
 
 ### Screenshot
 
-![Task 6 - Alarm In Alarm](./images/Task6-3.png)
+![Task 6 - Alarm In Alarm](./Images/Task6-1.png)
 
 ---
 
@@ -454,7 +424,7 @@ This demonstrated that the Auto Scaling group automatically launched additional 
 
 ### Screenshot
 
-![Task 6 - Additional Instances](./images/Task6-4.png)
+![Task 6 - Additional Instances](./Images/Task6-2.png)
 
 ---
 
@@ -478,27 +448,10 @@ Terminate instance
 
 ### Screenshot
 
-![Task 7 - Web Server Terminated](./images/Task7-1.png)
+![Task 7 - Web Server Terminated](./Images/Task7.png)
 
 ---
 
-# Optional Challenge: Creating an AMI Using AWS CLI
-
-The lab also included an optional AWS CLI challenge.
-
-The challenge required:
-
-1. Connecting to an EC2 instance using **EC2 Instance Connect**.
-2. Opening **AWS Details** and displaying the AWS CLI information.
-3. Configuring AWS credentials.
-4. Creating an AMI using AWS CLI.
-5. Providing the AMI name and EC2 instance ID.
-
-### Screenshot
-
-![Optional Challenge - AWS CLI](./images/Optional-1.png)
-
----
 
 # Final Results
 
