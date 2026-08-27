@@ -297,7 +297,7 @@ This confirmed that the Route 53 health check was successfully connected to the 
 
 ### 📸 Screenshot
 
-```text
+
 ![SNS Failover Notification](images/task5-sns-notification.png)
 
 
