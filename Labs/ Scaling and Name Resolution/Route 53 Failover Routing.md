@@ -33,6 +33,7 @@ The environment contained two EC2 instances:
 ![failover architecture](Images/failover-arch.png)
 ---
 
+
 # Task 1: Confirming the Café Websites
 
 ## Objective
