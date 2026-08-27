@@ -1,4 +1,4 @@
-AWS EC2 Auto Scaling Lab
+# Using Auto Scaling in AWS (Linux)
 Overview
 
 In this lab, I created a scalable web application environment using Amazon EC2, Amazon Machine Images (AMI), Application Load Balancer, Launch Templates, Auto Scaling Groups, and Amazon CloudWatch.
@@ -22,6 +22,57 @@ CloudWatch – Monitored CPU utilization and triggered scaling.
 
 ![Final Architecture](./Images/FinalArchitecture.png)
 
+### 1.2 Creating a New EC2 Instance
+I checked the AWS Region using the following command:
+
+curl http://169.254.169.254/latest/dynamic/instance-identity/document | grep region
+
+I checked the AWS Region using the following command:
+
+curl http://169.254.169.254/latest/dynamic/instance-identity/document | grep region
+
+The lab was running in:
+
+us-west-2
+
+I then configured the AWS CLI:
+
+aws configure
+
+I entered the following:
+
+AWS Access Key ID: Press Enter
+AWS Secret Access Key: Press Enter
+Default region name: us-west-2
+Default output format: json
+
+I then moved to the lab directory:
+
+cd /home/ec2-user/
+
+```bash
+   ,     #_
+   ~\_  ####_        Amazon Linux 2
+  ~~  \_#####\
+  ~~     \###|       AL2 End of Life is 2026-06-30.
+  ~~       \#/ ___
+   ~~       V~' '->
+    ~~~         /    A newer version of Amazon Linux is available!
+      ~~._.   _/
+         _/ _/       Amazon Linux 2023, GA and supported until 2029-06-30.
+       _/m/'           https://aws.amazon.com/linux/amazon-linux-2023/
+
+[ec2-user@ip-10-0-1-252 ~]$ curl http://169.254.169.254/latest/dynamic/instance-identity/document | grep region
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   475  100   475    0     0   176k      0 --:--:-- --:--:-- --:--:--  231k
+  "region" : "us-west-2",
+[ec2-user@ip-10-0-1-252 ~]$ aws configure
+AWS Access Key ID [None]: ASIARLVFCW6PRF6B5BZY
+AWS Secret Access Key [None]: gnXauagIlNfBYVcAp1hGyjACymuHm2p181ZpcYMT
+Default region name [us-west-2]: 
+Default output format [None]: json
+```
 
 
 
