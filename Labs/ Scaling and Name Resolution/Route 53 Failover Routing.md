@@ -197,7 +197,7 @@ http://www.6061566_1787851312.vocareum.training/cafe
 
 *Add your screenshot showing the café website and the primary Availability Zone.*
 
-```text
+
 ![DNS Resolution](Images/Task4.png)
 
 
