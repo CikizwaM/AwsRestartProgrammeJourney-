@@ -29,26 +29,8 @@ The environment contained two EC2 instances:
 ### Failover Flow
 
 ```text
-                    Users
-                      |
-                      v
-                Amazon Route 53
-                      |
-              Failover Routing
-                 /          \
-                /            \
-               v              v
-       CafeInstance1      CafeInstance2
-          PRIMARY           SECONDARY
-             |
-             | Health Check
-             v
-       Primary-Website-Health
-             |
-        Healthy → Primary
-        Unhealthy → Secondary
-```
-
+                  
+![failover architecture](Images/failover-arch.png)
 ---
 
 # Task 1: Confirming the Café Websites
@@ -86,16 +68,12 @@ The order confirmation page loaded successfully, confirming that the application
 
 ### 📸 Screenshot
 
-*Add your screenshot here showing the primary café website.*
-
 ```text
-![Primary Café Website](images/task1-primary-website.png)
+![Primary Café Website](Images/primary-website.png)
 ```
 
-*Add your screenshot here showing the secondary café website.*
-
 ```text
-![Secondary Café Website](images/task1-secondary-website.png)
+![Secondary Café Website](Images/secondary-website.png)
 ```
 
 ---
@@ -135,16 +113,8 @@ I also confirmed the SNS email subscription by opening the email from AWS Notifi
 
 ### 📸 Screenshot
 
-*Add your screenshot showing the Route 53 health check.*
-
 ```text
-![Route 53 Health Check](images/task2-health-check.png)
-```
-
-*Add your screenshot showing the Healthy status.*
-
-```text
-![Health Check Healthy](images/task2-health-check-healthy.png)
+![Health Check Healthy](Images/Task2.png)
 ```
 
 ---
@@ -175,7 +145,7 @@ This record directs normal traffic to the primary EC2 instance.
 ### 📸 Screenshot
 
 ```text
-![Primary Failover Record](images/task3-primary-record.png)
+![Primary Failover Record](Images/Task3.png)
 ```
 
 ---
@@ -199,12 +169,7 @@ The configuration was:
 
 The secondary record is used when the primary record becomes unhealthy.
 
-### 📸 Screenshot
-
-```text
-![Secondary Failover Record](images/task3-secondary-record.png)
 ```
-
 ---
 
 # Task 4: Verifying DNS Resolution
@@ -238,7 +203,7 @@ http://www.XXXXXXXX_XXXXXXXXXX.vocareum.training/cafe/
 *Add your screenshot showing the café website and the primary Availability Zone.*
 
 ```text
-![DNS Resolution](images/task4-dns-resolution.png)
+![DNS Resolution](Images/Task4.png)
 ```
 
 ---
@@ -290,7 +255,7 @@ Unhealthy
 ### 📸 Screenshot
 
 ```text
-![Health Check Unhealthy](images/task5-health-check-unhealthy.png)
+![Health Check Unhealthy](Images/Task5.png)
 ```
 
 ---
@@ -319,7 +284,7 @@ This confirmed that Route 53 failover routing was working correctly.
 ### 📸 Screenshot
 
 ```text
-![Failover to Secondary](images/task5-failover-secondary.png)
+![Failover to Secondary](Images/Task5-2.png)
 ```
 
 ---
@@ -446,13 +411,3 @@ When the primary web server was healthy, traffic was directed to **CafeInstance1
 When the primary web server became unavailable, Route 53 detected the failure and automatically redirected traffic to **CafeInstance2**.
 
 **Failover: ✅ Successful**
-
-
-
-
-
-
-
-
-
-
