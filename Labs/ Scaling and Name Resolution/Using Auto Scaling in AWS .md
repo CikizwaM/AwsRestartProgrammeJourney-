@@ -17,3 +17,13 @@ Target Group – Registered the web application instances with the load balancer
 Launch Template – Defined how new instances should be launched.
 Auto Scaling Group – Maintained between 2 and 4 instances.
 CloudWatch – Monitored CPU utilization and triggered scaling.
+
+![Starting Architecture](./Images/Capture.PNG)
+
+![Final Architecture](./Images/FinalArchitecture.png)
+
+
+
+
+
+
