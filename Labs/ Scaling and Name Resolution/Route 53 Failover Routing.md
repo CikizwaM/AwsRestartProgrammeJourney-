@@ -30,7 +30,7 @@ The environment contained two EC2 instances:
 
                   
 ![failover architecture](Images/failover-arch.png)
----
+
 
 
 # Task 1: Confirming the Café Websites
@@ -74,7 +74,6 @@ The order confirmation page loaded successfully, confirming that the application
 
 ![Secondary Café Website](Images/secondary-website.png)
 
-```
 
 ---
 
@@ -115,7 +114,6 @@ I also confirmed the SNS email subscription by opening the email from AWS Notifi
 
 ![Health Check Healthy](Images/Task2.png)
 
-```
 
 # Task 3: Configuring Route 53 Records
 
@@ -144,7 +142,7 @@ This record directs normal traffic to the primary EC2 instance.
 
 
 ![Primary Failover Record](Images/Task3.png)
-```
+
 
 ---
 
@@ -167,7 +165,6 @@ The configuration was:
 
 The secondary record is used when the primary record becomes unhealthy.
 
-```
 ---
 
 # Task 4: Verifying DNS Resolution
@@ -202,7 +199,7 @@ http://www.6061566_1787851312.vocareum.training/cafe
 
 ```text
 ![DNS Resolution](Images/Task4.png)
-```
+
 
 ---
 
@@ -254,7 +251,7 @@ Unhealthy
 
 
 ![Health Check Unhealthy](Images/Task5.png)
-```
+
 
 ---
 
@@ -282,7 +279,7 @@ This confirmed that Route 53 failover routing was working correctly.
 ### 📸 Screenshot
 
 ![Failover to Secondary](Images/Task5-2.png)
-```
+
 
 ---
 
@@ -302,7 +299,7 @@ This confirmed that the Route 53 health check was successfully connected to the 
 
 ```text
 ![SNS Failover Notification](images/task5-sns-notification.png)
-```
+
 
 ---
 
