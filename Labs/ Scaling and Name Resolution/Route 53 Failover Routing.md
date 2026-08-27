@@ -28,7 +28,6 @@ The environment contained two EC2 instances:
 
 ### Failover Flow
 
-```text
                   
 ![failover architecture](Images/failover-arch.png)
 ---
@@ -69,12 +68,12 @@ The order confirmation page loaded successfully, confirming that the application
 
 ### 📸 Screenshot
 
-```text
-![Primary Café Website](Images/primary-website.png)
-```
 
-```text
+![Primary Café Website](Images/primary-website.png)
+
+
 ![Secondary Café Website](Images/secondary-website.png)
+
 ```
 
 ---
@@ -114,11 +113,9 @@ I also confirmed the SNS email subscription by opening the email from AWS Notifi
 
 ### 📸 Screenshot
 
-```text
 ![Health Check Healthy](Images/Task2.png)
-```
 
----
+```
 
 # Task 3: Configuring Route 53 Records
 
@@ -145,7 +142,7 @@ This record directs normal traffic to the primary EC2 instance.
 
 ### 📸 Screenshot
 
-```text
+
 ![Primary Failover Record](Images/Task3.png)
 ```
 
@@ -196,7 +193,7 @@ The **Server Information** section confirmed that the request was being served b
 ### Expected URL Format
 
 ```text
-http://www.XXXXXXXX_XXXXXXXXXX.vocareum.training/cafe/
+http://www.6061566_1787851312.vocareum.training/cafe
 ```
 
 ### 📸 Screenshot
@@ -255,7 +252,7 @@ Unhealthy
 
 ### 📸 Screenshot
 
-```text
+
 ![Health Check Unhealthy](Images/Task5.png)
 ```
 
@@ -284,7 +281,6 @@ This confirmed that Route 53 failover routing was working correctly.
 
 ### 📸 Screenshot
 
-```text
 ![Failover to Secondary](Images/Task5-2.png)
 ```
 
