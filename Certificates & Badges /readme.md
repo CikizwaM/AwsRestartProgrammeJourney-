@@ -9,7 +9,3 @@
 | AWS SimuLearn: Databases in Practice | AWS SimuLearn: Highly Available Web Applications | AWS SimuLearn: Network Concepts |
 |---------|---------|---------|
 | ![](./Images/aws-simulearn-cloud-databases-in-practice.PNG) | ![](./Images/aws-simulearn-cloud-highly-available-web-applications.PNG) | ![](./Images/aws-simulearn-network-concepts.PNG) |
-
-| AWS SimuLearn: Core Security Concepts | AWS SimuLearn: File Systems in the Cloud | AWS SimuLearn: First NoSQL Database |
-|---------|---------|---------|
-| ![](./Images/Core Security Concepts.png) | ![](./Images/File Systems in the Cloud.png) | ![](./Images/First NoSQL Database.png) |
