@@ -162,13 +162,13 @@ The following screenshots demonstrate successful completion of the lab:
 
 The EC2 system log shows that the web server was successfully installed and configured.
 
-> Add your system-log screenshot here.
+> ![EC2 System Log](screenshots/EC2 System Log.png)
 
 ### Web Application
 
 The browser displays the deployed `projects.html` webpage.
 
-> Add your webpage screenshot here.
+> ![Web Application](screenshotsWeb Application.png)
 
 ## 📚 What I Learned
 
