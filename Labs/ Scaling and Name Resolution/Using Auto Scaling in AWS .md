@@ -191,9 +191,7 @@ After waiting for the web server to finish installing, the web application was d
 
 ### 📸 Screenshot
 
-```markdown
 ![Web Server Application](./Images/task1-webserver.png)
-```
 
 ---
 
@@ -217,12 +215,7 @@ This AMI was later used as the base image for the Auto Scaling instances.
 
 ### 📸 Screenshot
 
-```markdown
 ![WebServer AMI](Images/task1-webserver-ami.png)
-
-![](./Images/task1-webserver-ami.png)
-
-```
 
 ---
 
@@ -289,9 +282,7 @@ I copied the load balancer DNS name because I needed it later to test the applic
 
 ### 📸 Screenshot
 
-```markdown
 ![Application Load Balancer](Images/task2-load-balancer.png)
-```
 
 ---
 
@@ -316,9 +307,7 @@ I then created the launch template successfully.
 
 ### 📸 Screenshot
 
-```markdown
 ![Launch Template](Images/task2-launch-template.png)
-```
 
 ---
 
@@ -390,9 +379,7 @@ I then created the Auto Scaling Group.
 
 ### 📸 Screenshot
 
-```markdown
 ![Auto Scaling Group](Images/task2-auto-scaling-group.png)
-```
 
 ---
 
@@ -412,9 +399,7 @@ I waited until the status checks showed:
 
 ### 📸 Screenshot
 
-```markdown
 ![WebApp Instances](Images/task3-instances.png)
-```
 
 ---
 
@@ -438,9 +423,7 @@ This confirmed that the Application Load Balancer could successfully communicate
 
 ### 📸 Screenshot
 
-```markdown
 ![Healthy Targets](Images/task3-healthy-targets.png)
-```
 
 ---
 
@@ -452,9 +435,7 @@ The web application loaded successfully through the load balancer.
 
 ### 📸 Screenshot
 
-```markdown
 ![Load Balancer Test](Images/task4-load-balancer-test.png)
-```
 
 ---
 
@@ -472,9 +453,7 @@ The CPU utilization increased significantly.
 
 ### 📸 Screenshot
 
-```markdown
 ![Start Stress](Images/task4-start-stress.png)
-```
 
 ---
 
@@ -494,9 +473,7 @@ The Auto Scaling policy responded by increasing the number of instances.
 
 ### 📸 Screenshot
 
-```markdown
 ![Auto Scaling Activity](Images/task4-scaling-activity.png)
-```
 
 ---
 
