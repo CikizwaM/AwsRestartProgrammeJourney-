@@ -192,7 +192,7 @@ After waiting for the web server to finish installing, the web application was d
 ### 📸 Screenshot
 
 ```markdown
-![Web Server Application](Images/task1-webserver.png)
+![Web Server Application](./Images/task1-webserver.png)
 ```
 
 ---
