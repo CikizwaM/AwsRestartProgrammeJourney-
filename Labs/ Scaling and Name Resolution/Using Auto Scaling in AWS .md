@@ -219,6 +219,9 @@ This AMI was later used as the base image for the Auto Scaling instances.
 
 ```markdown
 ![WebServer AMI](Images/task1-webserver-ami.png)
+
+![](./Images/task1-webserver-ami.png)
+
 ```
 
 ---
